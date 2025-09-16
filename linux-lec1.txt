@@ -1,0 +1,95 @@
+Advantage of Linux:-
+
+1. Open Source 
+2. Eaisly update of software
+3. secure 
+4. multiple user can work at same time.
+5. Different distribution are available 
+ fedora, CentOS, RedHat, Kali, 
+6. Light Wight 
+
+Linux is kernel, not OS. 
+
+Linux OS = Linux kernel + GNU ( softwars )
+
+
+
+            /
+
+
+1. /root    2. /home   3. /etc  4. /usr  5. /boot  6. /opt  7. /dev 
+
+
+
+1. /root -  it is home direc of root user. 
+
+2. /home - it is direc of other user.
+
+3. /etc - it contains configuration files.
+
+4. /usr - it contains software files 
+
+5. /boot -  it contains boot file which helpd system to boot. 
+
+6. /opt -  it is optional direc for software configuratoin files.
+
+7. /dev -  it cotains devices informations
+================================================
+
+"Cat" command used for merge the more than one files and copy data one file to another file. 
+
+cat file1 file2 > allfile ( merging file1 and file2 data into new file name as "allfile" )
+
+cat file1 > file2  ( copy date from file1 to file2 )
+
+=============================================
+
+"touch" command used for "time stamp" the files. Means if we run command ( touch filename ) or with this command we can create multiples files. 
+
+then current time will be updated and we can check this by using command ( stat filename )
+
+sh-5.1# stat file1
+  File: file1
+  Size: 0               Blocks: 0          IO Block: 4096   regular empty file
+Device: 55h/85d Inode: 55299       Links: 1
+Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2025-09-15 10:31:18.642536985 +0800
+Modify: 2025-09-15 10:31:18.642536985 +0800
+Change: 2025-09-15 10:31:18.642536985 +0800
+ Birth: 2025-09-15 10:31:18.642536985 +0800
+sh-5.1# 
+
+================================================
+
+vi/nano command used for editing the files. 
+
+===========================================
+
+how to copy a file ?
+how to cut & paste file ?
+how to rename file or direct ?
+how to create hidden file or direct ?
+how to remove file or direct ?
+
+
+rmdir - this command is used to remove the specified directory ( empty )
+
+rmdir -p :- remove both the parents and child direc
+
+rmdir -pv :- removed all the parent and subdirect along with the verbrose. 
+
+rm -rf :- removes even non-empty fles
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

@@ -1,0 +1,28 @@
+Lec-2 for Linux
+================
+
+
+Useradd -- > To create user
+
+groupadd -- > To create group
+
+gpasswd -a/-m  -- > To add user into group, to add multiple user 
+
+ln -- > hardlink  ( Backup )
+ls -s --- > softlink  ( short cut )
+
+tar -- > Tar is an archiver used to combine multiple files into one.
+
+gzip -- > gzip is a compression tool used to reduce the size of a file. 
+
+wget -- > wget is the non-interactive network downloader.
+
+
+
+
+
+
+
+
+
+

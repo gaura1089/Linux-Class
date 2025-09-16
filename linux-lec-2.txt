@@ -1,0 +1,688 @@
+sh-5.1# ls
+gauravtool  version
+sh-5.1# pwd
+/opt/soft
+sh-5.1# cd ../..
+sh-5.1# ls
+afs  config.json  dkrun.sh   extra.sh  id_dsa.pub    id_ed25519      id_rsa.pub  media   opt run    srv      tmp     trans_repo.sh  usr
+app  daemon.json  docker.sh  home      id_ecdsa      id_ed25519.pub  lib mnt   proc  sbin    sshd.sh  trans.sh     trans_repo_bak.sh  var
+bin  dev  etc     id_dsa    id_ecdsa.pub  id_rsa     lib64 multi.sh  root  server.sh  sys      trans_maven.sh  trans_repo_nexus.sh
+sh-5.1# pwd
+/
+sh-5.1# ls
+afs  config.json  dkrun.sh   extra.sh  id_dsa.pub    id_ed25519      id_rsa.pub  media   opt run    srv      tmp     trans_repo.sh  usr
+app  daemon.json  docker.sh  home      id_ecdsa      id_ed25519.pub  lib mnt   proc  sbin    sshd.sh  trans.sh     trans_repo_bak.sh  var
+bin  dev  etc     id_dsa    id_ecdsa.pub  id_rsa     lib64 multi.sh  root  server.sh  sys      trans_maven.sh  trans_repo_nexus.sh
+sh-5.1# pwd
+/
+sh-5.1# cd home
+sh-5.1# ls
+amit
+sh-5.1# pwd
+/home
+sh-5.1# pwd
+/home
+sh-5.1# cd ..
+sh-5.1# pwd
+/
+sh-5.1# cat > data
+Hare Krishan Hare Krishna Krishna Krishan Hare Hare 
+Hare Rama Hare Rama Rama Rama Hare Hare 
+sh-5.1# cat data
+Hare Krishan Hare Krishna Krishna Krishan Hare Hare 
+Hare Rama Hare Rama Rama Rama Hare Hare 
+sh-5.1# pwd
+/
+sh-5.1# cd /home/amit
+sh-5.1# pwd
+/home/amit
+sh-5.1# ls
+myfoler
+sh-5.1# cd ../../
+sh-5.1# pwd
+/
+sh-5.1# ls
+afs  config.json  dev     etc       id_dsa   id_ecdsa.pub    id_rsa      lib64  multi.shroot  server.sh  sys   trans_maven.sh     trans_repo_nexus.sh
+app  daemon.json  dkrun.sh   extra.sh  id_dsa.pub  id_ed25519   id_rsa.pub  media  optrun   srv tmp   trans_repo.sh      usr
+bin  data  docker.sh  home      id_ecdsa    id_ed25519.pub  lib       mnt    procsbin  sshd.sh trans.sh  trans_repo_bak.sh  var
+sh-5.1# ln -s data /home/amit/datasotlnk
+sh-5.1# pwd
+/
+sh-5.1# cd /home/amit
+sh-5.1# ls
+datasotlnk  myfoler
+sh-5.1# cat datsotlnk
+cat: datsotlnk: No such file or directory
+sh-5.1# pwd
+/home/amit
+sh-5.1# ls
+datasotlnk  myfoler
+sh-5.1# cat /home/amit/datasotlnk
+cat: /home/amit/datasotlnk: No such file or directory
+sh-5.1# pwd
+/home/amit
+sh-5.1# ls
+datasotlnk  myfoler
+sh-5.1# cat datasotlnk
+cat: datasotlnk: No such file or directory
+sh-5.1# cd ../..
+sh-5.1# pwd
+/
+sh-5.1# ln -s data soflink              
+sh-5.1# ls
+afs  config.json  dev     etc       id_dsa   id_ecdsa.pub    id_rsa      lib64  multi.shroot  server.sh  sshd.sh  trans.sh  trans_repo_bak.sh    var
+app  daemon.json  dkrun.sh   extra.sh  id_dsa.pub  id_ed25519   id_rsa.pub  media  optrun   soflink sys  trans_maven.sh  trans_repo_nexus.sh
+bin  data  docker.sh  home      id_ecdsa    id_ed25519.pub  lib       mnt    procsbin  srv tmp  trans_repo.sh   usr
+sh-5.1# cat softlink
+cat: softlink: No such file or directory
+sh-5.1# vi soflink
+sh-5.1# cat soflink
+Hare Krishan Hare Krishna Krishna Krishan Hare Hare 
+Hare Rama Hare Rama Rama Rama Hare Hare 
+sh-5.1# cd /home/amit
+sh-5.1# ls
+datasotlnk  myfoler
+sh-5.1# cat datsotlnk
+cat: datsotlnk: No such file or directory
+sh-5.1# cat /home/amit/datsotlnk
+cat: /home/amit/datsotlnk: No such file or directory
+sh-5.1# pwd
+/home/amit
+sh-5.1# pwd 
+/home/amit
+sh-5.1# cd ../..
+sh-5.1# pwd
+/
+sh-5.1# ls
+afs  config.json  dev     etc       id_dsa   id_ecdsa.pub    id_rsa      lib64  multi.shroot  server.sh  sshd.sh  trans.sh  trans_repo_bak.sh    var
+app  daemon.json  dkrun.sh   extra.sh  id_dsa.pub  id_ed25519   id_rsa.pub  media  optrun   soflink sys  trans_maven.sh  trans_repo_nexus.sh
+bin  data  docker.sh  home      id_ecdsa    id_ed25519.pub  lib       mnt    procsbin  srv tmp  trans_repo.sh   usr
+sh-5.1# ln -s data /home/amit/softlink
+sh-5.1# cd /home/amit/
+sh-5.1# pwd
+/home/amit
+sh-5.1# ls
+datasotlnk  myfoler  softlink
+sh-5.1# cat softlink
+cat: softlink: No such file or directory
+sh-5.1# vi softlink
+sh-5.1# cd ../..
+sh-5.1# ls
+afs  config.json  dev     etc       id_dsa   id_ecdsa.pub    id_rsa      lib64  multi.shroot  server.sh  sshd.sh  trans.sh  trans_repo_bak.sh    var
+app  daemon.json  dkrun.sh   extra.sh  id_dsa.pub  id_ed25519   id_rsa.pub  media  optrun   soflink sys  trans_maven.sh  trans_repo_nexus.sh
+bin  data  docker.sh  home      id_ecdsa    id_ed25519.pub  lib       mnt    procsbin  srv tmp  trans_repo.sh   usr
+sh-5.1# cat date
+cat: date: No such file or directory
+sh-5.1# cat data
+Hare Krishan Hare Krishna Krishna Krishan Hare Hare 
+Hare Rama Hare Rama Rama Rama Hare Hare 
+sh-5.1# pwd
+/
+sh-5.1# cd /home/amit
+sh-5.1# ls
+data  datasotlnk  myfoler  softlink
+sh-5.1# cat softlink
+
+sh-5.1# nano softlink
+sh: nano: command not found
+sh-5.1# yum install nano -y
+AlmaLinux 9 - AppStream                                                                                                             2.5 kB/s | 4.2 kB     00:01    
+AlmaLinux 9 - AppStream                                                                                                             650 kB/s |  18 MB     00:27    
+AlmaLinux 9 - BaseOS                                                                                                                2.4 kB/s | 3.8 kB     00:01    
+AlmaLinux 9 - BaseOS                                                                                                                2.8 MB/s |  25 MB     00:08    
+AlmaLinux 9 - Extras                                                                                                                2.7 kB/s | 3.3 kB     00:01    
+AlmaLinux 9 - Extras                                                                                                                 14 kB/s |  20 kB     00:01    
+Last metadata expiration check: 0:00:01 ago on Wed Sep 17 00:06:18 2025.
+Dependencies resolved.
+====================================================================================================================================================================
+ Package                             Architecture                          Version                                      Repository                             Size
+====================================================================================================================================================================
+Installing:
+ nano                                x86_64                                5.6.1-7.el9                                  baseos                                692 k
+
+sh-5.1# pwd
+/
+sh-5.1# ls
+afs  config.json  dev     etc       id_dsa   id_ecdsa.pub    id_rsa      lib64  multi.shroot  server.sh  sshd.sh  trans.sh  trans_repo_bak.sh    var
+app  daemon.json  dkrun.sh   extra.sh  id_dsa.pub  id_ed25519   id_rsa.pub  media  optrun   soflink sys  trans_maven.sh  trans_repo_nexus.sh
+bin  data  docker.sh  home      id_ecdsa    id_ed25519.pub  lib       mnt    procsbin  srv tmp  trans_repo.sh   usr
+sh-5.1# ln data backup-data
+sh-5.1# ls
+afs     config.json  dkrun.sh   home id_ecdsa.pub id_rsa.pub  mnt       root  soflink  tmp   trans_repo_bak.sh
+app     daemon.json  docker.sh  id_dsa id_ed25519 lib     multi.sh  run  srv   trans.sh   trans_repo_nexus.sh
+backup-data  data  etc     id_dsa.pub  id_ed25519.pub  lib64     opt       sbin  sshd.sh  trans_maven.sh  usr
+bin     dev  extra.sh   id_ecdsa id_rsa media     proc      server.sh  sys   trans_repo.sh   var
+sh-5.1# cat backup-data
+Hare Krishan Hare Krishna Krishna Krishan Hare Hare 
+Hare Rama Hare Rama Rama Rama Hare Hare 
+sh-5.1# vim data
+sh-5.1# cat backup-data
+Hare Krishan Hare Krishna Krishna Krishan Hare Hare 
+Hare Rama Hare Rama Rama Rama Hare Hare
+
+
+
+Jay Shri Krihsna  
+sh-5.1# 
+sh-5.1# 
+sh-5.1# 
+sh-5.1# ln data /home/amit/bckup-dt  
+sh-5.1# cd home/amit
+sh-5.1# ls
+bckup-dt  datadatasotlnk  myfoler  softlink
+sh-5.1# cat bckup-dt
+Hare Krishan Hare Krishna Krishna Krishan Hare Hare 
+Hare Rama Hare Rama Rama Rama Hare Hare
+
+
+
+Jay Shri Krihsna  
+sh-5.1# ls
+bckup-dt  datadatasotlnk  myfoler  softlink
+sh-5.1# pwd
+/home/amit
+sh-5.1# cat > myfile
+this file is created in /home/amit path
+sh-5.1# ls
+bckup-dt  datadatasotlnk  myfile  myfoler  softlink
+sh-5.1# ln myfile /bckup-myfle
+sh-5.1# cd ..
+sh-5.1# cd ..
+sh-5.1# ls
+afs     bin  dev     extra.sh id_ecdsa id_rsa      media     proc  server.shsystrans_repo.sh     var
+app     config.json  dkrun.sh   home id_ecdsa.pub id_rsa.pub  mnt       root  soflinktmptrans_repo_bak.sh
+backup-data  daemon.json  docker.sh  id_dsa id_ed25519 lib     multi.sh  run   srvtrans.shtrans_repo_nexus.sh
+bckup-myfle  data  etc     id_dsa.pub  id_ed25519.pub  lib64     opt       sbin  sshd.shtrans_maven.shusr
+sh-5.1# pwd
+/
+sh-5.1# cat back-myfle
+cat: back-myfle: No such file or directory
+sh-5.1# cat bcupk-myfle
+cat: bcupk-myfle: No such file or directory
+sh-5.1# cat bckup-myfle
+this file is created in /home/amit path
+sh-5.1# pwd
+/
+sh-5.1# mkdir -p fol1/fol2/fol3
+sh-5.1# ls
+afs     bin  dev     extra.sh  id_dsa.pub    id_ed25519.pub  lib64     opt   sbinsshd.sh   trans_maven.sh       usr
+app     config.json  dkrun.sh   fol1      id_ecdsa      id_rsa     media     proc  server.shsys  trans_repo.sh        var
+backup-data  daemon.json  docker.sh  home      id_ecdsa.pub  id_rsa.pub      mnt       root  soflinktmp  trans_repo_bak.sh
+bckup-myfle  data  etc     id_dsa    id_ed25519    lib     multi.sh  run   srvtrans.sh  trans_repo_nexus.sh
+sh-5.1# mv data fol1
+sh-5.1# ls
+afs     bin  dkrun.sh   fol1 id_ecdsa id_rsa      media     proc  server.shsystrans_repo.sh     var
+app     config.json  docker.sh  home id_ecdsa.pub id_rsa.pub  mnt       root  soflinktmptrans_repo_bak.sh
+backup-data  daemon.json  etc     id_dsa id_ed25519 lib     multi.sh  run   srvtrans.shtrans_repo_nexus.sh
+bckup-myfle  dev  extra.sh   id_dsa.pub  id_ed25519.pub  lib64     opt       sbin  sshd.shtrans_maven.shusr
+sh-5.1# mv backup-data fol1/fol2
+sh-5.1# cd fol1
+sh-5.1# ls
+data  fol2
+sh-5.1# cd fol2
+sh-5.1# ls
+backup-data  fol3
+sh-5.1# cd ..
+sh-5.1# cd ..
+sh-5.1# pwd
+/
+sh-5.1# ls 
+afs     config.json  docker.sh  home id_ecdsa.pub id_rsa.pub  mnt       root  soflink  tmp   trans_repo_bak.sh
+app     daemon.json  etc     id_dsa id_ed25519 lib     multi.sh  run  srv   trans.sh   trans_repo_nexus.sh
+bckup-myfle  dev  extra.sh   id_dsa.pub  id_ed25519.pub  lib64     opt       sbin  sshd.sh  trans_maven.sh  usr
+bin     dkrun.sh  fol1     id_ecdsa id_rsa media     proc      server.sh  sys   trans_repo.sh   var
+sh-5.1# tar -cvf fol1.tar fol1
+fol1/
+fol1/data
+fol1/fol2/
+fol1/fol2/fol3/
+fol1/fol2/backup-data
+sh-5.1# ls
+afs     config.json  docker.sh  fol1.tar id_ecdsa id_rsa      media     proc  server.shsystrans_repo.sh     var
+app     daemon.json  etc     home id_ecdsa.pub id_rsa.pub  mnt       root  soflinktmptrans_repo_bak.sh
+bckup-myfle  dev  extra.sh   id_dsa id_ed25519 lib     multi.sh  run   srvtrans.shtrans_repo_nexus.sh
+bin     dkrun.sh  fol1     id_dsa.pub  id_ed25519.pub  lib64     opt       sbin  sshd.shtrans_maven.shusr
+sh-5.1# gzip fol1.tar
+sh-5.1# ls
+afs     config.json  docker.sh  fol1.tar.gz  id_ecdsa  id_rsa      mediaproc  server.sh  sys trans_repo.sh      var
+app     daemon.json  etc     home  id_ecdsa.pub  id_rsa.pub  mntroot  soflink tmp trans_repo_bak.sh
+bckup-myfle  dev  extra.sh   id_dsa  id_ed25519  lib      multi.shrun   srv trans.sh trans_repo_nexus.sh
+bin     dkrun.sh  fol1     id_dsa.pub   id_ed25519.pub  lib64       optsbin  sshd.sh trans_maven.sh  usr
+sh-5.1# inspect fol1.tar.gz
+sh: inspect: command not found
+sh-5.1# yum install inspect -y
+Last metadata expiration check: 0:16:53 ago on Wed Sep 17 00:06:18 2025.
+No match for argument: inspect
+Error: Unable to find a match: inspect
+sh-5.1# ls
+afs     config.json  docker.sh  fol1.tar.gz  id_ecdsa  id_rsa      mediaproc  server.sh  sys trans_repo.sh      var
+app     daemon.json  etc     home  id_ecdsa.pub  id_rsa.pub  mntroot  soflink tmp trans_repo_bak.sh
+bckup-myfle  dev  extra.sh   id_dsa  id_ed25519  lib      multi.shrun   srv trans.sh trans_repo_nexus.sh
+bin     dkrun.sh  fol1     id_dsa.pub   id_ed25519.pub  lib64       optsbin  sshd.sh trans_maven.sh  usr
+sh-5.1# pwd
+/
+sh-5.1# mv fol1.tar.gz /home/amit
+sh-5.1# cd home/amit
+sh-5.1# ls
+bckup-dt  datadatasotlnk  fol1.tar.gz  myfile  myfoler  softlink
+sh-5.1# gunzip fol1.tar.gz
+sh-5.1# ls
+bckup-dt  datadatasotlnk  fol1.tar  myfile  myfoler  softlink
+sh-5.1# tar -evf fol1.tar
+tar: invalid option -- 'e'
+Try 'tar --help' or 'tar --usage' for more information.
+sh-5.1# tar -xvf fol1.tar
+fol1/
+fol1/data
+fol1/fol2/
+fol1/fol2/fol3/
+fol1/fol2/backup-data
+sh-5.1# ls
+bckup-dt  datadatasotlnk  fol1  fol1.tar  myfile  myfoler  softlink
+sh-5.1# pwd 
+/home/amit
+sh-5.1# ls
+bckup-dt  datadatasotlnk  fol1  fol1.tar  myfile  myfoler  softlink
+sh-5.1# history
+    1  git -v
+    2  exit
+    3  ls
+    4  pwd
+    5  cd ../..
+    6  ls
+    7  pwd
+    8  ls
+    9  pwd
+   10  cd home
+   11  ls
+   12  pwd
+   13  pwd
+   14  cd ..
+   15  pwd
+   16  cat > data
+   17  cat data
+   18  pwd
+   19  cd /home/amit
+   20  pwd
+   21  ls
+   22  cd ../../
+   23  pwd
+   24  ls
+   25  ln -s data /home/amit/datasotlnk
+   26  pwd
+   27  cd /home/amit
+   28  ls
+   29  cat datsotlnk
+   30  pwd
+   31  ls
+   32  cat /home/amit/datasotlnk
+   33  pwd
+   34  ls
+   35  cat datasotlnk
+   36  cd ../..
+   37  pwd
+   38  ln -s data soflink
+   39  ls
+   40  cat softlink
+   41  vi soflink
+   42  cat soflink
+   43  cd /home/amit
+   44  ls
+   45  cat datsotlnk
+   46  cat /home/amit/datsotlnk
+   47  pwd
+   48  pwd
+   49  cd ../..
+   50  pwd
+   51  ls
+   52  ln -s data /home/amit/softlink
+   53  cd /home/amit/
+   54  pwd
+   55  ls
+   56  cat softlink
+   57  vi softlink
+   58  cd ../..
+   59  ls
+   60  cat date
+   61  cat data
+   62  pwd
+   63  cd /home/amit
+   64  ls
+   65  cat softlink
+   66  nano softlink
+   67  yum install nano -y
+   68  pwd
+   69  nano softlink
+   70  cat softlink
+   71  cd ../..
+   72  ls
+   73  vi data
+   74  pwd
+   75  ls
+   76  ln data backup-data
+   77  ls
+   78  cat backup-data
+   79  vim data
+   80  cat backup-data
+   81  ln data /home/amit/bckup-dt
+   82  cd home/amit
+   83  ls
+   84  cat bckup-dt
+   85  ls
+   86  pwd
+   87  cat > myfile
+   88  ls
+   89  ln myfile /bckup-myfle
+   90  cd ..
+   91  cd ..
+   92  ls
+   93  pwd
+   94  cat back-myfle
+   95  cat bcupk-myfle
+   96  cat bckup-myfle
+   97  pwd
+   98  mkdir -p fol1/fol2/fol3
+   99  ls
+  100  mv data fol1
+  101  ls
+  102  mv backup-data fol1/fol2
+  103  cd fol1
+  104  ls
+  105  cd fol2
+  106  ls
+  107  cd ..
+  108  cd ..
+  109  pwd
+  110  ls 
+  111  tar -cvf fol1.tar fol1
+  112  ls
+  113  gzip fol1.tar
+  114  ls
+  115  inspect fol1.tar.gz
+  116  yum install inspect -y
+  117  ls
+  118  pwd
+  119  mv fol1.tar.gz /home/amit
+  120  cd home/amit
+  121  ls
+  122  gunzip fol1.tar.gz
+  123  ls
+  124  tar -evf fol1.tar
+  125  tar -xvf fol1.tar
+  126  ls
+  127  pwd
+  128  ls
+  129  history
+sh-5.1# pwd
+/home/amit
+sh-5.1# cd ..
+sh-5.1# cd ..
+sh-5.1# pwd
+/
+sh-5.1# useradd gaurav -p Gu@102831
+sh-5.1# cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:65534:65534:Kernel Overflow User:/:/sbin/nologin
+systemd-coredump:x:999:997:systemd Core Dumper:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+tss:x:59:59:Account used for TPM access:/:/usr/sbin/nologin
+systemd-oom:x:995:995:systemd Userspace OOM Killer:/:/usr/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/usr/sbin/nologin
+polkitd:x:994:994:User for polkitd:/:/sbin/nologin
+rtkit:x:172:172:RealtimeKit:/:/sbin/nologin
+geoclue:x:993:993:User for geoclue:/var/lib/geoclue:/sbin/nologin
+pipewire:x:992:992:PipeWire System Daemon:/run/pipewire:/usr/sbin/nologin
+flatpak:x:991:991:Flatpak system helper:/:/usr/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+amit:x:1000:1000::/home/amit:/bin/bash
+gaurav:x:1001:1001::/home/gaurav:/bin/bash
+sh-5.1# groupadd mail_gp 
+sh-5.1# cat /etc/group
+root:x:0:
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+wheel:x:10:
+cdrom:x:11:
+mail:x:12:
+man:x:15:
+dialout:x:18:
+floppy:x:19:
+games:x:20:
+tape:x:33:
+video:x:39:
+ftp:x:50:
+lock:x:54:
+audio:x:63:
+users:x:100:
+nobody:x:65534:
+utmp:x:22:
+utempter:x:35:
+input:x:999:
+kvm:x:36:
+render:x:998:
+systemd-journal:x:190:
+systemd-coredump:x:997:
+dbus:x:81:
+tss:x:59:
+sgx:x:996:
+systemd-oom:x:995:
+ssh_keys:x:101:
+sshd:x:74:
+polkitd:x:994:
+rtkit:x:172:
+geoclue:x:993:
+pipewire:x:992:
+flatpak:x:991:
+tcpdump:x:72:
+amit:x:1000:
+gaurav:x:1001:
+mail_gp:x:1002:
+sh-5.1# gpasswd -a gaurav mail-gp
+gpasswd: group 'mail-gp' does not exist in /etc/group
+sh-5.1# gpasswd -a gaurav mail_gp
+Adding user gaurav to group mail_gp
+sh-5.1# cat /etc/group
+root:x:0:
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+wheel:x:10:
+cdrom:x:11:
+mail:x:12:
+man:x:15:
+dialout:x:18:
+floppy:x:19:
+games:x:20:
+tape:x:33:
+video:x:39:
+ftp:x:50:
+lock:x:54:
+audio:x:63:
+users:x:100:
+nobody:x:65534:
+utmp:x:22:
+utempter:x:35:
+input:x:999:
+kvm:x:36:
+render:x:998:
+systemd-journal:x:190:
+systemd-coredump:x:997:
+dbus:x:81:
+tss:x:59:
+sgx:x:996:
+systemd-oom:x:995:
+ssh_keys:x:101:
+sshd:x:74:
+polkitd:x:994:
+rtkit:x:172:
+geoclue:x:993:
+pipewire:x:992:
+flatpak:x:991:
+tcpdump:x:72:
+amit:x:1000:
+gaurav:x:1001:
+mail_gp:x:1002:gaurav
+sh-5.1# gpasswd -a gaurav root
+Adding user gaurav to group root
+sh-5.1# cat /etc/group
+root:x:0:gaurav
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+wheel:x:10:
+cdrom:x:11:
+mail:x:12:
+man:x:15:
+dialout:x:18:
+floppy:x:19:
+games:x:20:
+tape:x:33:
+video:x:39:
+ftp:x:50:
+lock:x:54:
+audio:x:63:
+users:x:100:
+nobody:x:65534:
+utmp:x:22:
+utempter:x:35:
+input:x:999:
+kvm:x:36:
+render:x:998:
+systemd-journal:x:190:
+systemd-coredump:x:997:
+dbus:x:81:
+tss:x:59:
+sgx:x:996:
+systemd-oom:x:995:
+ssh_keys:x:101:
+sshd:x:74:
+polkitd:x:994:
+rtkit:x:172:
+geoclue:x:993:
+pipewire:x:992:
+flatpak:x:991:
+tcpdump:x:72:
+amit:x:1000:
+gaurav:x:1001:
+mail_gp:x:1002:gaurav
+sh-5.1# pwd
+/
+sh-5.1# su gaurav
+[gaurav@739bd02a5389 /]$ ls
+afs     config.json  docker.sh  home id_ecdsa.pub id_rsa.pub  mnt       root  soflink  tmp   trans_repo_bak.sh
+app     daemon.json  etc     id_dsa id_ed25519 lib     multi.sh  run  srv   trans.sh   trans_repo_nexus.sh
+bckup-myfle  dev  extra.sh   id_dsa.pub  id_ed25519.pub  lib64     opt       sbin  sshd.sh  trans_maven.sh  usr
+bin     dkrun.sh  fol1     id_ecdsa id_rsa media     proc      server.sh  sys   trans_repo.sh   var
+[gaurav@739bd02a5389 /]$ cd root
+[gaurav@739bd02a5389 root]$ exit
+exit
+sh-5.1# su amit
+[amit@739bd02a5389 /]$ cd root
+bash: cd: root: Permission denied
+[amit@739bd02a5389 /]$ exit
+exit
+sh-5.1# cd root
+sh-5.1# ls
+all  fil2  file1  file3  file4file5  file6  gaurav  newfile  storage
+sh-5.1# ls -a
+.   .bash_history  .bash_profile  .cshrc   .gitconfig  .m2   .tcshrc   all   file1  file4  file6   newfile
+..  .bash_logout   .bashrc  .docker  .lesshst    .ssh  .viminfo  fil2  file3  file5  gaurav  storage
+sh-5.1# ls -l
+total 20
+-rw-r--r-- 1 root root   23 Sep 14 19:33 all
+-rw-r--r-- 1 root root   26 Sep 14 22:38 fil2
+-rw-r--r-- 1 root root   10 Sep 14 19:32 file1
+-rw-r--r-- 1 root root    0 Sep 14 22:44 file3
+-rw-r--r-- 1 root root    0 Sep 14 22:44 file4
+-rw-r--r-- 1 root root    0 Sep 14 22:44 file5
+-rw-r--r-- 1 root root    0 Sep 14 22:44 file6
+drwxr-xr-x 3 root root 4096 Sep  4 03:29 gaurav
+-rw-r--r-- 1 root root    0 Sep 14 22:43 newfile
+drwxr-xr-x 3 root root 4096 Sep  4 06:17 storage
+sh-5.1# pwd
+/root
+sh-5.1# cd /home
+sh-5.1# ls
+amit  gaurav
+sh-5.1# ls -l
+total 8
+drwx------ 4 amit   amit   4096 Sep 17 00:53 amit
+drwx------ 2 gaurav gaurav 4096 Sep 17 00:53 gaurav
+sh-5.1# cd ..
+sh-5.1# pwd
+/
+sh-5.1# ls
+afs     config.json  docker.sh  home id_ecdsa.pub id_rsa.pub  media     proc  server.shsystrans_repo.sh     var
+app     daemon.json  etc     id_dsa id_ed25519 index.html  mnt       root  soflinktmptrans_repo_bak.sh
+bckup-myfle  dev  extra.sh   id_dsa.pub  id_ed25519.pub  lib     multi.sh  run   srvtrans.shtrans_repo_nexus.sh
+bin     dkrun.sh  fol1     id_ecdsa id_rsa lib64     opt       sbin  sshd.shtrans_maven.shusr
+sh-5.1# cat >> tanu-data
+hi Tanu,
+I love you... !
+sh-5.1# 
+sh-5.1# ls
+afs     config.json  docker.sh  home id_ecdsa.pub id_rsa.pub  media     proc  server.shsys   trans_maven.shusr
+app     daemon.json  etc     id_dsa id_ed25519 index.html  mnt       root  soflinktanu-data  trans_repo.shvar
+bckup-myfle  dev  extra.sh   id_dsa.pub  id_ed25519.pub  lib     multi.sh  run   srvtmp   trans_repo_bak.sh
+bin     dkrun.sh  fol1     id_ecdsa id_rsa lib64     opt       sbin  sshd.shtrans.sh   trans_repo_nexus.sh
+sh-5.1# ln -s tanu-data sft-lnk-tanu
+sh-5.1# cat sft-lnk-tanu
+hi Tanu,
+I love you... !
+sh-5.1# cat >>sft-lnk-tanu
+Do you love me ?
+
+sh-5.1# cat tanu-data
+hi Tanu,
+I love you... !
+Do you love me ?
+
+sh-5.1# rm -rf tanu-data
+sh-5.1# ls
+afs     config.json  docker.sh  home id_ecdsa.pub id_rsa.pub  media     proc  server.sh   sshd.sh   trans_maven.sh  usr
+app     daemon.json  etc     id_dsa id_ed25519 index.html  mnt       root  sft-lnk-tanu  sys     trans_repo.sh  var
+bckup-myfle  dev  extra.sh   id_dsa.pub  id_ed25519.pub  lib     multi.sh  run   soflink   tmp     trans_repo_bak.sh
+bin     dkrun.sh  fol1     id_ecdsa id_rsa lib64     opt       sbin  srv   trans.sh  trans_repo_nexus.sh
+sh-5.1# cat sft-lnk-tanu
+cat: sft-lnk-tanu: No such file or directory
+sh-5.1# rm -rf sft-lnk-tanu
+sh-5.1# ls
+afs     config.json  docker.sh  home id_ecdsa.pub id_rsa.pub  media     proc  server.shsystrans_repo.sh     var
+app     daemon.json  etc     id_dsa id_ed25519 index.html  mnt       root  soflinktmptrans_repo_bak.sh
+bckup-myfle  dev  extra.sh   id_dsa.pub  id_ed25519.pub  lib     multi.sh  run   srvtrans.shtrans_repo_nexus.sh
+bin     dkrun.sh  fol1     id_ecdsa id_rsa lib64     opt       sbin  sshd.shtrans_maven.shusr
+sh-5.1# cd home/gaurav
+sh-5.1# ls
+sh-5.1# pwd
+/home/gaurav
+sh-5.1# 

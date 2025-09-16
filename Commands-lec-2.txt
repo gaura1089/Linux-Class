@@ -1,0 +1,176 @@
+sh-5.1# history
+    1  git -v
+    2  exit
+    3  ls
+    4  pwd
+    5  cd ../..
+    6  ls
+    7  pwd
+    8  ls
+    9  pwd
+   10  cd home
+   11  ls
+   12  pwd
+   13  pwd
+   14  cd ..
+   15  pwd
+   16  cat > data
+   17  cat data
+   18  pwd
+   19  cd /home/amit
+   20  pwd
+   21  ls
+   22  cd ../../
+   23  pwd
+   24  ls
+   25  ln -s data /home/amit/datasotlnk
+   26  pwd
+   27  cd /home/amit
+   28  ls
+   29  cat datsotlnk
+   30  pwd
+   31  ls
+   32  cat /home/amit/datasotlnk
+   33  pwd
+   34  ls
+   35  cat datasotlnk
+   36  cd ../..
+   37  pwd
+   38  ln -s data soflink
+   39  ls
+   40  cat softlink
+   41  vi soflink
+   42  cat soflink
+   43  cd /home/amit
+   44  ls
+   45  cat datsotlnk
+   46  cat /home/amit/datsotlnk
+   47  pwd
+   48  pwd
+   49  cd ../..
+   50  pwd
+   51  ls
+   52  ln -s data /home/amit/softlink
+   53  cd /home/amit/
+   54  pwd
+   55  ls
+   56  cat softlink
+   57  vi softlink
+   58  cd ../..
+   59  ls
+   60  cat date
+   61  cat data
+   62  pwd
+   63  cd /home/amit
+   64  ls
+   65  cat softlink
+   66  nano softlink
+   67  yum install nano -y
+   68  pwd
+   69  nano softlink
+   70  cat softlink
+   71  cd ../..
+   72  ls
+   73  vi data
+   74  pwd
+   75  ls
+   76  ln data backup-data
+   77  ls
+   78  cat backup-data
+   79  vim data
+   80  cat backup-data
+   81  ln data /home/amit/bckup-dt
+   82  cd home/amit
+   83  ls
+   84  cat bckup-dt
+   85  ls
+   86  pwd
+   87  cat > myfile
+   88  ls
+   89  ln myfile /bckup-myfle
+   90  cd ..
+   91  cd ..
+   92  ls
+   93  pwd
+   94  cat back-myfle
+   95  cat bcupk-myfle
+   96  cat bckup-myfle
+   97  pwd
+   98  mkdir -p fol1/fol2/fol3
+   99  ls
+  100  mv data fol1
+  101  ls
+  102  mv backup-data fol1/fol2
+  103  cd fol1
+  104  ls
+  105  cd fol2
+  106  ls
+  107  cd ..
+  108  cd ..
+  109  pwd
+  110  ls 
+  111  tar -cvf fol1.tar fol1
+  112  ls
+  113  gzip fol1.tar
+  114  ls
+  115  inspect fol1.tar.gz
+  116  yum install inspect -y
+  117  ls
+  118  pwd
+  119  mv fol1.tar.gz /home/amit
+  120  cd home/amit
+  121  ls
+  122  gunzip fol1.tar.gz
+  123  ls
+  124  tar -evf fol1.tar
+  125  tar -xvf fol1.tar
+  126  ls
+  127  pwd
+  128  ls
+  129  history
+  130  pwd
+  131  cd ..
+  132  cd ..
+  133  pwd
+  134  useradd gaurav -p Gu@102831
+  135  cat /etc/passwd
+  136  groupadd mail_gp 
+  137  cat /etc/group
+  138  gpasswd -a gaurav mail-gp
+  139  gpasswd -a gaurav mail_gp
+  140  cat /etc/group
+  141  gpasswd -a gaurav root
+  142  cat /etc/group
+  143  pwd
+  144  su gaurav
+  145  su amit
+  146  cd root
+  147  ls
+  148  ls -a
+  149  ls -l
+  150  pwd
+  151  cd /home
+  152  ls
+  153  ls -l
+  154  cd ..
+  155  pwd
+  156  wget https://www.google.com/chrome/
+  157  ls
+  158  cat index.html
+  159  ls
+  160  cat >> tanu-data
+  161  ls
+  162  ln -s tanu-data sft-lnk-tanu
+  163  cat sft-lnk-tanu
+  164  cat >>sft-lnk-tanu
+  165  cat tanu-data
+  166  rm -rf tanu-data
+  167  ls
+  168  cat sft-lnk-tanu
+  169  rm -rf sft-lnk-tanu
+  170  ls
+  171  cd home/gaurav
+  172  ls
+  173  pwd
+  174  pwd
+  175  history
