@@ -1,0 +1,82 @@
+[root@ip-172-31-8-108 ~]# history
+    1  cd..
+    2  cd ..
+    3  ls
+    4  useradd gaurav -p Gu@102831
+    5  useradd tanu -p Gu@102831
+    6  ls
+    7  ls -l
+    8  su gaurav
+    9  useradd deepak
+   10  passwd deepak
+   11  useradd rohit
+   12  passwd rohit
+   13  su rohit
+   14  pwd
+   15  ls
+   16  userdel gaurav,tanu
+   17  userdel gaurav
+   18  userdel tanu
+   19  ls
+   20  ls
+   21  cat /etc/passwd
+   22  useradd gaurav
+   23  ls
+   24  ls
+   25  userdel gaurav
+   26  ls
+   27  ls
+   28  userdel -r gaurav
+   29  ls
+   30  rm -rf gaurav
+   31  ls
+   32  userdel -r tanu
+   33  rm -rf tanu
+   34  ls
+   35  usedel -r rohit
+   36  userdel -r rohit
+   37  ls
+   38  ls -l
+   39  chmod o+x deepak
+   40  chmod o+x ec2-user
+   41  ls -l
+   42  useradd gaurav
+   43  ls
+   44  passwd gaurav
+   45  ls
+   46  ls -l
+   47  chmod o+x gaurav
+   48  ls -l
+   49  su deepak
+   50  chmod o-x gaurav
+   51  chmod o-x deepak
+   52  chmod o-x ec2-user
+   53  ls -l
+   54  su deepak
+   55  chmod o+x gaurav
+   56  su deepak
+   57  ls -l
+   58  chmod o+r gaurav
+   59  su deepak
+   60  chmod o+w gaurav
+   61  su deepak
+   62  ls -l
+   63  su deepak
+   64  cat /etc/group
+   65  gpasswd deepak root
+   66  gpasswd -a deepak root
+   67  cat /etc/group
+   68  su deepak
+   69  ls
+   70  cd .
+   71  ls
+   72  cd ..
+   73  ls
+   74  cd root
+   75  ls
+   76  usermod -aG wheel deepak
+   77  cat /etc/group
+   78  su deepak
+   79  clear
+   80  history
+[root@ip-172-31-8-108 ~]#

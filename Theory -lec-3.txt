@@ -1,0 +1,46 @@
+Access modes/permission 
+
+
+
+Access Mod 
+==================================
+r   4       To display the content  To list the content
+                
+w   2       To modify               To create or remove
+
+x   1       To execute the file     To enter into directory
+
+dr_xr___wx 1 root root 6july01  4:10 file
+
+chmod u+w file or chomod 743 file
+
+drwxr___wx 1 root root 6july01  4:10 file
+
+
+r = read
+w = write
+x = execute 
+
+
+chmod - permission define of folder and files.
+chgrp-  manage group on  folder and files. 
+chown - manage owner on  folder and files
+groupadd- create group 
+useradd  - create user 
+
+
+
+chmod, chown, ls -l se file permissions explore karein
+groupadd, usermod -aG se group management practice karein
+/etc/passwd aur /etc/shadow file ka structure samjhein
+crontab, systemctl, journalctl jaise system-level tools explore karein.
+
+
+chmod o+w file
+
+u = user
+g= group
+o=other
+
+
+drw__w_rwx

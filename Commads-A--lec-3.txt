@@ -1,0 +1,639 @@
+sh-5.1# ls
+sh-5.1# pwd
+/opt/soft
+sh-5.1# cd ../..
+sh-5.1# ls
+afs     config.json  dkrun.sh   fol1     id_dsa.pub    id_ed25519.pub  lib    multi.sh  runsrv trans.sh    trans_repo_nexus.sh
+app     daemon.json  docker.sh  folder1  id_ecdsa    id_rsa    lib64  opt     sbinsshd.sh  trans_maven.sh     usr
+bckup-myfle  dev  etc     home     id_ecdsa.pub  id_rsa.pub    media  proc      server.shsys trans_repo.sh    var
+bin     dj  extra.sh   id_dsa   id_ed25519    index.html    mnt    root      soflinktmp trans_repo_bak.sh
+sh-5.1# cd ~
+sh-5.1# ls
+all  fil2  file1  file3  file4file5  file6  gaurav  newfile  storage
+sh-5.1# ls -l
+total 20
+-rw-r--r-- 1 root root   23 Sep 14 19:33 all
+-rw-r--r-- 1 root root   26 Sep 14 22:38 fil2
+-rw-r--r-- 1 root root   10 Sep 14 19:32 file1
+-rw-r--r-- 1 root root    0 Sep 14 22:44 file3
+-rw-r--r-- 1 root root    0 Sep 14 22:44 file4
+-rw-r--r-- 1 root root    0 Sep 14 22:44 file5
+-rw-r--r-- 1 root root    0 Sep 14 22:44 file6
+drwxr-xr-x 3 root root 4096 Sep  4 03:29 gaurav
+-rw-r--r-- 1 root root    0 Sep 14 22:43 newfile
+drwxr-xr-x 3 root root 4096 Sep  4 06:17 storage
+sh-5.1# chown gaurav file1
+sh-5.1# ls -l
+total 20
+-rw-r--r-- 1 root   root   23 Sep 14 19:33 all
+-rw-r--r-- 1 root   root   26 Sep 14 22:38 fil2
+-rw-r--r-- 1 gaurav root   10 Sep 14 19:32 file1
+-rw-r--r-- 1 root   root    0 Sep 14 22:44 file3
+-rw-r--r-- 1 root   root    0 Sep 14 22:44 file4
+-rw-r--r-- 1 root   root    0 Sep 14 22:44 file5
+-rw-r--r-- 1 root   root    0 Sep 14 22:44 file6
+drwxr-xr-x 3 root   root 4096 Sep  4 03:29 gaurav
+-rw-r--r-- 1 root   root    0 Sep 14 22:43 newfile
+drwxr-xr-x 3 root   root 4096 Sep  4 06:17 storage
+sh-5.1# pwd
+/root
+sh-5.1# cd home/
+sh: cd: home/: No such file or directory
+sh-5.1# cd home 
+sh: cd: home: No such file or directory
+sh-5.1# pwd
+/root
+sh-5.1# cd ..
+sh-5.1# pwd
+/
+sh-5.1# cd home/gaurav
+sh-5.1# pwd
+/home/gaurav
+sh-5.1# ls
+newfile  newfol1
+sh-5.1# ls -l
+total 8
+-rw-r--r-- 1 gaurav gaurav   10 Sep 18 11:52 newfile
+drwxr-xr-x 2 gaurav gaurav 4096 Sep 18 11:51 newfol1
+sh-5.1# cd ..
+sh-5.1# pwd
+/home
+sh-5.1# cd amit
+sh-5.1# ls
+bckup-dt  datadatasotlnk  fol1  fol1.tar  myfile  myfoler  softlink
+sh-5.1# ls -l
+total 32
+-rw-r--r-- 3 root root   115 Sep 17 00:09 bckup-dt
+-rw-r--r-- 1 root root    11 Sep 17 00:06 data
+lrwxrwxrwx 1 root root     4 Sep 16 23:56 datasotlnk -> data
+drwxr-xr-x 3 root root  4096 Sep 17 00:20 fol1
+-rw-r--r-- 1 root root 10240 Sep 17 00:21 fol1.tar
+-rw-r--r-- 2 root root    40 Sep 17 00:11 myfile
+drwxr-xr-x 2 amit amit  4096 Sep 14 22:50 myfoler
+lrwxrwxrwx 1 root root     4 Sep 17 00:01 softlink -> data
+sh-5.1# su amit
+[amit@739bd02a5389 ~]$ ls
+bckup-dt  datadatasotlnk  fol1  fol1.tar  myfile  myfoler  softlink
+[amit@739bd02a5389 ~]$ ls -l
+total 32
+-rw-r--r-- 3 root root   115 Sep 17 00:09 bckup-dt
+-rw-r--r-- 1 root root    11 Sep 17 00:06 data
+lrwxrwxrwx 1 root root     4 Sep 16 23:56 datasotlnk -> data
+drwxr-xr-x 3 root root  4096 Sep 17 00:20 fol1
+-rw-r--r-- 1 root root 10240 Sep 17 00:21 fol1.tar
+-rw-r--r-- 2 root root    40 Sep 17 00:11 myfile
+drwxr-xr-x 2 amit amit  4096 Sep 14 22:50 myfoler
+lrwxrwxrwx 1 root root     4 Sep 17 00:01 softlink -> data
+[amit@739bd02a5389 ~]$ exit
+exit
+sh-5.1# pwd
+/home/amit
+sh-5.1# whoami
+root
+sh-5.1# mkdir imp-data 
+sh-5.1# cat > impfile
+This is confiditail file. don't touch it without permission. 
+sh-5.1# ls
+bckup-dt  datadatasotlnk  fol1  fol1.tar  imp-data  impfile  myfile  myfolersoftlink
+sh-5.1# ls -l
+total 40
+-rw-r--r-- 3 root root   115 Sep 17 00:09 bckup-dt
+-rw-r--r-- 1 root root    11 Sep 17 00:06 data
+lrwxrwxrwx 1 root root     4 Sep 16 23:56 datasotlnk -> data
+drwxr-xr-x 3 root root  4096 Sep 17 00:20 fol1
+-rw-r--r-- 1 root root 10240 Sep 17 00:21 fol1.tar
+drwxr-xr-x 2 root root  4096 Sep 18 18:02 imp-data
+-rw-r--r-- 1 root root    62 Sep 18 18:03 impfile
+-rw-r--r-- 2 root root    40 Sep 17 00:11 myfile
+drwxr-xr-x 2 amit amit  4096 Sep 14 22:50 myfoler
+lrwxrwxrwx 1 root root     4 Sep 17 00:01 softlink -> data
+sh-5.1# addgroup imp-data-grp
+sh: addgroup: command not found
+sh-5.1# groupadd imp-data-grp
+sh-5.1# ls -l
+total 40
+-rw-r--r-- 3 root root   115 Sep 17 00:09 bckup-dt
+-rw-r--r-- 1 root root    11 Sep 17 00:06 data
+lrwxrwxrwx 1 root root     4 Sep 16 23:56 datasotlnk -> data
+drwxr-xr-x 3 root root  4096 Sep 17 00:20 fol1
+-rw-r--r-- 1 root root 10240 Sep 17 00:21 fol1.tar
+drwxr-xr-x 2 root root  4096 Sep 18 18:02 imp-data
+-rw-r--r-- 1 root root    62 Sep 18 18:03 impfile
+-rw-r--r-- 2 root root    40 Sep 17 00:11 myfile
+drwxr-xr-x 2 amit amit  4096 Sep 14 22:50 myfoler
+lrwxrwxrwx 1 root root     4 Sep 17 00:01 softlink -> data
+sh-5.1# cat /etc/group
+root:x:0:gaurav
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+wheel:x:10:
+cdrom:x:11:
+mail:x:12:
+man:x:15:
+dialout:x:18:
+floppy:x:19:
+games:x:20:
+tape:x:33:
+video:x:39:
+ftp:x:50:
+lock:x:54:
+audio:x:63:
+users:x:100:
+nobody:x:65534:
+utmp:x:22:
+utempter:x:35:
+input:x:999:
+kvm:x:36:
+render:x:998:
+systemd-journal:x:190:
+systemd-coredump:x:997:
+dbus:x:81:
+tss:x:59:
+sgx:x:996:
+systemd-oom:x:995:
+ssh_keys:x:101:
+sshd:x:74:
+polkitd:x:994:
+rtkit:x:172:
+geoclue:x:993:
+pipewire:x:992:
+flatpak:x:991:
+tcpdump:x:72:
+amit:x:1000:
+gaurav:x:1001:
+mail_gp:x:1002:gaurav
+imp-data-grp:x:1003:
+sh-5.1# ls -l
+total 40
+-rw-r--r-- 3 root root   115 Sep 17 00:09 bckup-dt
+-rw-r--r-- 1 root root    11 Sep 17 00:06 data
+lrwxrwxrwx 1 root root     4 Sep 16 23:56 datasotlnk -> data
+drwxr-xr-x 3 root root  4096 Sep 17 00:20 fol1
+-rw-r--r-- 1 root root 10240 Sep 17 00:21 fol1.tar
+drwxr-xr-x 2 root root  4096 Sep 18 18:02 imp-data
+-rw-r--r-- 1 root root    62 Sep 18 18:03 impfile
+-rw-r--r-- 2 root root    40 Sep 17 00:11 myfile
+drwxr-xr-x 2 amit amit  4096 Sep 14 22:50 myfoler
+lrwxrwxrwx 1 root root     4 Sep 17 00:01 softlink -> data
+sh-5.1# chgrp imp-data-grp imp-data
+sh-5.1# ls -l
+total 40
+-rw-r--r-- 3 root root           115 Sep 17 00:09 bckup-dt
+-rw-r--r-- 1 root root            11 Sep 17 00:06 data
+lrwxrwxrwx 1 root root             4 Sep 16 23:56 datasotlnk -> data
+drwxr-xr-x 3 root root          4096 Sep 17 00:20 fol1
+-rw-r--r-- 1 root root         10240 Sep 17 00:21 fol1.tar
+drwxr-xr-x 2 root imp-data-grp  4096 Sep 18 18:02 imp-data
+-rw-r--r-- 1 root root            62 Sep 18 18:03 impfile
+-rw-r--r-- 2 root root            40 Sep 17 00:11 myfile
+drwxr-xr-x 2 amit amit          4096 Sep 14 22:50 myfoler
+lrwxrwxrwx 1 root root             4 Sep 17 00:01 softlink -> data
+sh-5.1# pwd
+/home/amit
+sh-5.1# ls
+bckup-dt  datadatasotlnk  fol1  fol1.tar  imp-data  impfile  myfile  myfolersoftlink
+sh-5.1# whoami
+root
+sh-5.1# su amit
+[amit@739bd02a5389 ~]$ ls
+bckup-dt  datadatasotlnk  fol1  fol1.tar  imp-data  impfile  myfile  myfolersoftlink
+[amit@739bd02a5389 ~]$ pwd
+/home/amit
+[amit@739bd02a5389 ~]$ cd imp-data
+[amit@739bd02a5389 imp-data]$ ls
+[amit@739bd02a5389 imp-data]$ ls -l
+total 0
+[amit@739bd02a5389 imp-data]$ pwd
+/home/amit/imp-data
+[amit@739bd02a5389 imp-data]$ ls 
+[amit@739bd02a5389 imp-data]$ exit
+exit
+sh-5.1# ls
+bckup-dt  datadatasotlnk  fol1  fol1.tar  imp-data  impfile  myfile  myfolersoftlink
+sh-5.1# cd imp-data
+sh-5.1# ls
+sh-5.1# ls
+sh-5.1# pwd
+/home/amit/imp-data
+sh-5.1# cd ..
+sh-5.1# ls
+bckup-dt  datadatasotlnk  fol1  fol1.tar  imp-data  impfile  myfile  myfolersoftlink
+sh-5.1# ls
+afs     config.json  docker.sh  id_dsa   id_ed25519   index.html  mnt root    soflink  tmp     trans_repo_bak.sh
+app     daemon.json  etc     id_dsa.pub    id_ed25519.pub  lib       multi.sh  run    srv      trans.sh     trans_repo_nexus.sh
+bckup-myfle  dev  extra.sh   id_ecdsa   id_rsa   lib64       opt sbin    sshd.sh  trans_maven.sh  usr
+bin     dkrun.sh  home     id_ecdsa.pub  id_rsa.pub   media       proc server.sh  sys      trans_repo.sh   var
+sh-5.1# cd ~
+sh-5.1# ls
+all  fil2  file1  file3  file4file5  file6  gaurav  newfile  storage
+sh-5.1# rm -rf *
+sh-5.1# ls
+sh-5.1# ls
+sh-5.1# pwd
+/root
+sh-5.1# adduser gaurav
+adduser: user 'gaurav' already exists
+sh-5.1# cd home
+sh: cd: home: No such file or directory
+sh-5.1# cd /home
+sh-5.1# ls
+sh-5.1# ls
+sh-5.1# cl
+sh: cl: command not found
+sh-5.1# pwd
+/home
+sh-5.1# ls
+sh-5.1# adduser amit
+adduser: user 'amit' already exists
+sh-5.1# cd /home
+sh-5.1# ls
+sh-5.1# ^C
+sh-5.1# cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:65534:65534:Kernel Overflow User:/:/sbin/nologin
+systemd-coredump:x:999:997:systemd Core Dumper:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+tss:x:59:59:Account used for TPM access:/:/usr/sbin/nologin
+systemd-oom:x:995:995:systemd Userspace OOM Killer:/:/usr/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/usr/sbin/nologin
+polkitd:x:994:994:User for polkitd:/:/sbin/nologin
+rtkit:x:172:172:RealtimeKit:/:/sbin/nologin
+geoclue:x:993:993:User for geoclue:/var/lib/geoclue:/sbin/nologin
+pipewire:x:992:992:PipeWire System Daemon:/run/pipewire:/usr/sbin/nologin
+flatpak:x:991:991:Flatpak system helper:/:/usr/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+amit:x:1000:1000::/home/amit:/bin/bash
+gaurav:x:1001:1001::/home/gaurav:/bin/bash
+sh-5.1# removeuser gaurav
+sh: removeuser: command not found
+sh-5.1# rmoveuser gaurav
+sh: rmoveuser: command not found
+sh-5.1# getent passwd amit
+amit:x:1000:1000::/home/amit:/bin/bash
+sh-5.1# userdel amit
+sh-5.1# cd /home 
+sh-5.1# ls
+sh-5.1# pwd
+/home
+sh-5.1# cd ..
+sh-5.1# pwd
+/
+sh-5.1# su gaurav
+bash-5.1$ whoami
+gaurav
+bash-5.1$ exit
+exit
+sh-5.1# ls
+afs     config.json  docker.sh  id_dsa   id_ed25519   index.html  mnt root    soflink  tmp     trans_repo_bak.sh
+sh-5.1# whoami 
+root
+sh-5.1# cd ~
+sh-5.1# ls
+sh-5.1# pwd
+/root
+sh-5.1# useradd tanu
+sh-5.1# mkdir imp-data
+sh-5.1# touch bio-data
+sh-5.1# mv bio-data imp-data
+sh-5.1# ls
+imp-data
+sh-5.1# cd imp-data
+sh-5.1# ls
+bio-data
+sh-5.1# vi bio-data
+sh-5.1# cat bio-data
+Hi This is very imp data. Don't touch it with out permission. 
+sh-5.1# pwd
+/root/imp-data
+sh-5.1# cd ..
+sh-5.1# ls -l
+total 4
+drwxr-xr-x 2 root root 4096 Sep 18 18:19 imp-data
+sh-5.1# ls
+imp-data
+sh-5.1# pwd
+/root
+sh-5.1# su tanu
+[tanu@739bd02a5389 root]$ ls
+ls: cannot open directory '.': Permission denied
+[tanu@739bd02a5389 root]$ pwd
+/root
+[tanu@739bd02a5389 root]$ exit
+exit
+sh-5.1# addgroup adm-priv
+sh: addgroup: command not found
+sh-5.1# groupadd  adm-priv
+sh-5.1# chgrp adm-priv 'imp-data 
+> exec attach failed: error on attach stdin: read escape sequence
+sh-5.1# chgrp adm-priv imp-data
+chgrp: cannot access 'imp-data': No such file or directory
+sh-5.1# ls
+sh-5.1# pwd
+/opt/soft
+sh-5.1# cd ../..
+sh-5.1# ls
+afs     config.json  docker.sh  id_dsa   id_ed25519   index.html  mnt root    soflink  tmp     trans_repo_bak.sh
+app     daemon.json  etc     id_dsa.pub    id_ed25519.pub  lib       multi.sh  run    srv      trans.sh     trans_repo_nexus.sh
+bckup-myfle  dev  extra.sh   id_ecdsa   id_rsa   lib64       opt sbin    sshd.sh  trans_maven.sh  usr
+bin     dkrun.sh  home     id_ecdsa.pub  id_rsa.pub   media       proc server.sh  sys      trans_repo.sh   var
+sh-5.1# cd ~
+sh-5.1# ls
+imp-data
+sh-5.1# chgrp adm-priv imp-data
+sh-5.1# ls -l
+total 4
+drwxr-xr-x 2 root adm-priv 4096 Sep 18 18:19 imp-data
+sh-5.1# whoami
+root
+sh-5.1# su tanu
+[tanu@739bd02a5389 root]$ ls
+ls: cannot open directory '.': Permission denied
+[tanu@739bd02a5389 root]$ pwd
+/root
+[tanu@739bd02a5389 root]$ cd ..
+[tanu@739bd02a5389 /]$ pwd
+/
+[tanu@739bd02a5389 /]$ exit
+exit
+sh-5.1# ls
+imp-data
+sh-5.1# pwd
+/root
+sh-5.1# gpasswd -a tanu adm-priv 
+Adding user tanu to group adm-priv
+sh-5.1# cat /etc/group
+root:x:0:
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+wheel:x:10:
+cdrom:x:11:
+mail:x:12:
+man:x:15:
+dialout:x:18:
+floppy:x:19:
+games:x:20:
+tape:x:33:
+video:x:39:
+ftp:x:50:
+lock:x:54:
+audio:x:63:
+users:x:100:
+nobody:x:65534:
+utmp:x:22:
+utempter:x:35:
+input:x:999:
+kvm:x:36:
+render:x:998:
+systemd-journal:x:190:
+systemd-coredump:x:997:
+dbus:x:81:
+tss:x:59:
+sgx:x:996:
+systemd-oom:x:995:
+ssh_keys:x:101:
+sshd:x:74:
+polkitd:x:994:
+rtkit:x:172:
+geoclue:x:993:
+pipewire:x:992:
+flatpak:x:991:
+tcpdump:x:72:
+mail_gp:x:1002:
+imp-data-grp:x:1003:
+tanu:x:1000:
+adm-priv:x:1004:tanu
+sh-5.1# ls
+imp-data
+sh-5.1# ls -l
+total 4
+drwxr-xr-x 2 root adm-priv 4096 Sep 18 18:19 imp-data
+sh-5.1# su tanu
+[tanu@739bd02a5389 root]$ pwd
+/root
+[tanu@739bd02a5389 root]$ ls
+ls: cannot open directory '.': Permission denied
+[tanu@739bd02a5389 root]$ pwd
+/root
+[tanu@739bd02a5389 root]$ exit
+exit
+sh-5.1# ls -l
+total 4
+drwxr-xr-x 2 root adm-priv 4096 Sep 18 18:19 imp-data
+sh-5.1# chmod g+w imp-data
+sh-5.1# ls -l
+total 4
+drwxrwxr-x 2 root adm-priv 4096 Sep 18 18:19 imp-data
+sh-5.1# su tanu
+[tanu@739bd02a5389 root]$ ls
+ls: cannot open directory '.': Permission denied
+[tanu@739bd02a5389 root]$ pwd
+/root
+[tanu@739bd02a5389 root]$ ls -l
+ls: cannot open directory '.': Permission denied
+[tanu@739bd02a5389 root]$ exit
+exit
+sh-5.1# ls -
+ls: cannot access '-': No such file or directory
+sh-5.1# ls -l
+total 4
+drwxrwxr-x 2 root adm-priv 4096 Sep 18 18:19 imp-data
+sh-5.1# chmod o+w imp-data
+sh-5.1# ls -l
+total 4
+drwxrwxrwx 2 root adm-priv 4096 Sep 18 18:19 imp-data
+sh-5.1# su tanu
+[tanu@739bd02a5389 root]$ ls
+ls: cannot open directory '.': Permission denied
+[tanu@739bd02a5389 root]$ exit
+exit
+sh-5.1# cat /etc/group
+root:x:0:
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+wheel:x:10:
+cdrom:x:11:
+mail:x:12:
+man:x:15:
+dialout:x:18:
+floppy:x:19:
+games:x:20:
+tape:x:33:
+video:x:39:
+ftp:x:50:
+lock:x:54:
+audio:x:63:
+users:x:100:
+nobody:x:65534:
+utmp:x:22:
+utempter:x:35:
+input:x:999:
+kvm:x:36:
+render:x:998:
+systemd-journal:x:190:
+systemd-coredump:x:997:
+dbus:x:81:
+tss:x:59:
+sgx:x:996:
+systemd-oom:x:995:
+ssh_keys:x:101:
+sshd:x:74:
+polkitd:x:994:
+rtkit:x:172:
+geoclue:x:993:
+pipewire:x:992:
+flatpak:x:991:
+tcpdump:x:72:
+mail_gp:x:1002:
+imp-data-grp:x:1003:
+tanu:x:1000:
+adm-priv:x:1004:tanu
+sh-5.1# gpasswd -a root tanu
+Adding user root to group tanu
+sh-5.1# ls
+imp-data
+sh-5.1# su tanu
+[tanu@739bd02a5389 root]$ ls
+ls: cannot open directory '.': Permission denied
+[tanu@739bd02a5389 root]$ cat /etc/group
+root:x:0:
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+wheel:x:10:
+cdrom:x:11:
+mail:x:12:
+man:x:15:
+dialout:x:18:
+floppy:x:19:
+games:x:20:
+tape:x:33:
+video:x:39:
+ftp:x:50:
+lock:x:54:
+audio:x:63:
+users:x:100:
+nobody:x:65534:
+utmp:x:22:
+utempter:x:35:
+input:x:999:
+kvm:x:36:
+render:x:998:
+systemd-journal:x:190:
+systemd-coredump:x:997:
+dbus:x:81:
+tss:x:59:
+sgx:x:996:
+systemd-oom:x:995:
+ssh_keys:x:101:
+sshd:x:74:
+polkitd:x:994:
+rtkit:x:172:
+geoclue:x:993:
+pipewire:x:992:
+flatpak:x:991:
+tcpdump:x:72:
+mail_gp:x:1002:
+imp-data-grp:x:1003:
+tanu:x:1000:root
+adm-priv:x:1004:tanu
+[tanu@739bd02a5389 root]$ exit
+exit
+sh-5.1# gpasswd -a tanu root
+Adding user tanu to group root
+sh-5.1# su tanu
+[tanu@739bd02a5389 root]$ ls
+imp-data
+[tanu@739bd02a5389 root]$ ls
+imp-data
+[tanu@739bd02a5389 root]$ cd imp-data
+[tanu@739bd02a5389 imp-data]$ ls
+bio-data
+[tanu@739bd02a5389 imp-data]$ cd ..
+[tanu@739bd02a5389 root]$ cd ..
+[tanu@739bd02a5389 /]$ pwd
+/
+[tanu@739bd02a5389 /]$ cd ~
+[tanu@739bd02a5389 ~]$ ls
+[tanu@739bd02a5389 ~]$ exit
+exit
+sh-5.1# ls
+imp-data
+sh-5.1# ls
+imp-data
+sh-5.1# adduser gaurav
+Creating mailbox file: File exists
+sh-5.1# userdel gaurav
+sh-5.1# adduser gaurav
+adduser: warning: the home directory /home/gaurav already exists.
+adduser: Not copying any file from skel directory into it.
+Creating mailbox file: File exists
+sh-5.1# pwd 
+/root
+sh-5.1# cd /home
+sh-5.1# ls
+gauravtanu
+sh-5.1# ls
+gauravtanu
+sh-5.1# cd ..
+sh-5.1# ls
+afs     config.json  docker.sh  id_dsa   id_ed25519   index.html  mnt root    soflink  tmp     trans_repo_bak.sh
+app     daemon.json  etc     id_dsa.pub    id_ed25519.pub  lib       multi.sh  run    srv      trans.sh     trans_repo_nexus.sh
+bckup-myfle  dev  extra.sh   id_ecdsa   id_rsa   lib64       opt sbin    sshd.sh  trans_maven.sh  usr
+bin     dkrun.sh  home     id_ecdsa.pub  id_rsa.pub   media       proc server.sh  sys      trans_repo.sh   var
+sh-5.1# cd ~
+sh-5.1# ls
+imp-data
+sh-5.1# mv imp-data /home/gaurav
+sh-5.1# ls
+sh-5.1# su gaurav
+[gaurav@739bd02a5389 root]$ ls
+ls: cannot open directory '.': Permission denied
+[gaurav@739bd02a5389 root]$ cd ..
+[gaurav@739bd02a5389 /]$ ls
+afs     config.json  docker.sh  id_dsa   id_ed25519   index.html  mnt root    soflink  tmp     trans_repo_bak.sh
+app     daemon.json  etc     id_dsa.pub    id_ed25519.pub  lib       multi.sh  run    srv      trans.sh     trans_repo_nexus.sh
+bckup-myfle  dev  extra.sh   id_ecdsa   id_rsa   lib64       opt sbin    sshd.sh  trans_maven.sh  usr
+bin     dkrun.sh  home     id_ecdsa.pub  id_rsa.pub   media       proc server.sh  sys      trans_repo.sh   var
+[gaurav@739bd02a5389 /]$ cd ~
+[gaurav@739bd02a5389 ~]$ ls
+imp-data
+[gaurav@739bd02a5389 ~]$ rm -rf *
+[gaurav@739bd02a5389 ~]$ 

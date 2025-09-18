@@ -1,0 +1,579 @@
+[ec2-user@ip-172-31-8-108 ~]$ ls
+[ec2-user@ip-172-31-8-108 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-172-31-8-108 ~]$ su root
+Password:
+su: Authentication failure
+[ec2-user@ip-172-31-8-108 ~]$ sudo su
+[root@ip-172-31-8-108 ec2-user]# cd..
+bash: cd..: command not found
+[root@ip-172-31-8-108 ec2-user]# cd ..
+[root@ip-172-31-8-108 home]# ls
+ec2-user
+[root@ip-172-31-8-108 home]# useradd gaurav -p Gu@102831
+[root@ip-172-31-8-108 home]# useradd tanu -p Gu@102831
+[root@ip-172-31-8-108 home]# ls
+ec2-user  gaurav  tanu
+[root@ip-172-31-8-108 home]# ls -l
+total 0
+drwx------. 3 ec2-user ec2-user 74 Sep 18 11:37 ec2-user
+drwx------. 2 gaurav   gaurav   62 Sep 18 11:40 gaurav
+drwx------. 2 tanu     tanu     62 Sep 18 11:41 tanu
+[root@ip-172-31-8-108 home]# su gaurav
+[gaurav@ip-172-31-8-108 home]$ su tanu
+Password:
+su: Authentication failure
+[gaurav@ip-172-31-8-108 home]$ su tanu
+Password:
+su: Authentication failure
+[gaurav@ip-172-31-8-108 home]$ exit
+exit
+[root@ip-172-31-8-108 home]# useradd deepak
+[root@ip-172-31-8-108 home]# passwd deepak
+Changing password for user deepak.
+New password:
+Retype new password:
+passwd: all authentication tokens updated successfully.
+[root@ip-172-31-8-108 home]# useradd rohit
+[root@ip-172-31-8-108 home]# passwd rohit
+Changing password for user rohit.
+New password:
+Retype new password:
+passwd: all authentication tokens updated successfully.
+[root@ip-172-31-8-108 home]# su rohit
+[rohit@ip-172-31-8-108 home]$ su deepak
+Password:
+su: Authentication failure
+[rohit@ip-172-31-8-108 home]$ su deepak
+Password:
+[deepak@ip-172-31-8-108 home]$ su rohit
+Password:
+[rohit@ip-172-31-8-108 home]$ su gaurav
+Password:
+su: Authentication failure
+[rohit@ip-172-31-8-108 home]$ su gaurav
+Password:
+su: Authentication failure
+[rohit@ip-172-31-8-108 home]$ exit
+exit
+[deepak@ip-172-31-8-108 home]$ sudo su
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+For security reasons, the password you type will not be visible.
+
+[sudo] password for deepak:
+Sorry, try again.
+[sudo] password for deepak:
+deepak is not in the sudoers file.
+[deepak@ip-172-31-8-108 home]$ exit
+exit
+[rohit@ip-172-31-8-108 home]$ exit
+exit
+[root@ip-172-31-8-108 home]#
+[root@ip-172-31-8-108 home]# pwd
+/home
+[root@ip-172-31-8-108 home]# ls
+deepak  ec2-user  gaurav  rohit  tanu
+[root@ip-172-31-8-108 home]# userdel gaurav,tanu
+userdel: user 'gaurav,tanu' does not exist
+[root@ip-172-31-8-108 home]# userdel gaurav
+[root@ip-172-31-8-108 home]# userdel tanu
+[root@ip-172-31-8-108 home]# ls
+deepak  ec2-user  gaurav  rohit  tanu
+[root@ip-172-31-8-108 home]# ls
+deepak  ec2-user  gaurav  rohit  tanu
+[root@ip-172-31-8-108 home]# cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:65534:65534:Kernel Overflow User:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/usr/sbin/nologin
+systemd-oom:x:999:999:systemd Userspace OOM Killer:/:/usr/sbin/nologin
+systemd-resolve:x:193:193:systemd Resolver:/:/usr/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+libstoragemgmt:x:997:997:daemon account for libstoragemgmt:/:/usr/sbin/nologin
+systemd-coredump:x:996:996:systemd Core Dumper:/:/usr/sbin/nologin
+systemd-timesync:x:995:995:systemd Time Synchronization:/:/usr/sbin/nologin
+chrony:x:994:994:chrony system user:/var/lib/chrony:/sbin/nologin
+ec2-instance-connect:x:993:993::/home/ec2-instance-connect:/sbin/nologin
+stapunpriv:x:159:159:systemtap unprivileged user:/var/lib/stapunpriv:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+ec2-user:x:1000:1000:EC2 Default User:/home/ec2-user:/bin/bash
+deepak:x:1003:1003::/home/deepak:/bin/bash
+rohit:x:1004:1004::/home/rohit:/bin/bash
+[root@ip-172-31-8-108 home]#
+[root@ip-172-31-8-108 home]# useradd gaurav
+useradd: warning: the home directory /home/gaurav already exists.
+useradd: Not copying any file from skel directory into it.
+Creating mailbox file: File exists
+[root@ip-172-31-8-108 home]# ls
+deepak  ec2-user  gaurav  rohit  tanu
+[root@ip-172-31-8-108 home]# ls
+deepak  ec2-user  gaurav  rohit  tanu
+[root@ip-172-31-8-108 home]# userdel gaurav
+[root@ip-172-31-8-108 home]# ls
+deepak  ec2-user  gaurav  rohit  tanu
+[root@ip-172-31-8-108 home]# ls
+deepak  ec2-user  gaurav  rohit  tanu
+[root@ip-172-31-8-108 home]# userdel -r gaurav
+userdel: user 'gaurav' does not exist
+[root@ip-172-31-8-108 home]# ls
+deepak  ec2-user  gaurav  rohit  tanu
+[root@ip-172-31-8-108 home]# rm -rf gaurav
+[root@ip-172-31-8-108 home]# ls
+deepak  ec2-user  rohit  tanu
+[root@ip-172-31-8-108 home]# userdel -r tanu
+userdel: user 'tanu' does not exist
+[root@ip-172-31-8-108 home]# rm -rf tanu
+[root@ip-172-31-8-108 home]# ls
+deepak  ec2-user  rohit
+[root@ip-172-31-8-108 home]# usedel -r rohit
+bash: usedel: command not found
+[root@ip-172-31-8-108 home]# userdel -r rohit
+[root@ip-172-31-8-108 home]# ls
+deepak  ec2-user
+[root@ip-172-31-8-108 home]# ls -l
+total 0
+drwx------. 2 deepak   deepak   83 Sep 18 11:51 deepak
+drwx------. 3 ec2-user ec2-user 74 Sep 18 11:37 ec2-user
+[root@ip-172-31-8-108 home]# chmod o+x deepak
+[root@ip-172-31-8-108 home]# chmod o+x ec2-user
+[root@ip-172-31-8-108 home]# ls -l
+total 0
+drwx-----x. 2 deepak   deepak   83 Sep 18 11:51 deepak
+drwx-----x. 3 ec2-user ec2-user 74 Sep 18 11:37 ec2-user
+[root@ip-172-31-8-108 home]# useradd gaurav
+Creating mailbox file: File exists
+[root@ip-172-31-8-108 home]# ls
+deepak  ec2-user  gaurav
+[root@ip-172-31-8-108 home]# passwd gaurav
+Changing password for user gaurav.
+New password:
+Retype new password:
+passwd: all authentication tokens updated successfully.
+[root@ip-172-31-8-108 home]# ls
+deepak  ec2-user  gaurav
+[root@ip-172-31-8-108 home]# ls -l
+total 0
+drwx-----x. 2 deepak   deepak   83 Sep 18 11:51 deepak
+drwx-----x. 3 ec2-user ec2-user 74 Sep 18 11:37 ec2-user
+drwx------. 2 gaurav   gaurav   62 Sep 18 11:56 gaurav
+[root@ip-172-31-8-108 home]# chmod o+x gaurav
+[root@ip-172-31-8-108 home]# ls -l
+total 0
+drwx-----x. 2 deepak   deepak   83 Sep 18 11:51 deepak
+drwx-----x. 3 ec2-user ec2-user 74 Sep 18 11:37 ec2-user
+drwx-----x. 2 gaurav   gaurav   62 Sep 18 11:56 gaurav
+[root@ip-172-31-8-108 home]# su deepak
+[deepak@ip-172-31-8-108 home]$ ls
+deepak  ec2-user  gaurav
+[deepak@ip-172-31-8-108 home]$ cd gaurav
+[deepak@ip-172-31-8-108 gaurav]$ cd ..
+[deepak@ip-172-31-8-108 home]$ cd ec2-user
+[deepak@ip-172-31-8-108 ec2-user]$ cd ..
+[deepak@ip-172-31-8-108 home]$ exit
+exit
+[root@ip-172-31-8-108 home]# chmod o-x gaurav
+[root@ip-172-31-8-108 home]# chmod o-x deepak
+[root@ip-172-31-8-108 home]# chmod o-x ec2-user
+[root@ip-172-31-8-108 home]# ls -l
+total 0
+drwx------. 2 deepak   deepak   83 Sep 18 11:51 deepak
+drwx------. 3 ec2-user ec2-user 74 Sep 18 11:37 ec2-user
+drwx------. 2 gaurav   gaurav   62 Sep 18 11:56 gaurav
+[root@ip-172-31-8-108 home]# su deepak
+[deepak@ip-172-31-8-108 home]$ cd gaurav
+bash: cd: gaurav: Permission denied
+[deepak@ip-172-31-8-108 home]$ exit
+exit
+[root@ip-172-31-8-108 home]# chmod o+x gaurav
+[root@ip-172-31-8-108 home]# su deepak
+[deepak@ip-172-31-8-108 home]$ cd gaurav
+[deepak@ip-172-31-8-108 gaurav]$ pwd
+/home/gaurav
+[deepak@ip-172-31-8-108 gaurav]$ ls
+ls: cannot open directory '.': Permission denied
+[deepak@ip-172-31-8-108 gaurav]$ cd ..
+[deepak@ip-172-31-8-108 home]$ cd gaurav
+[deepak@ip-172-31-8-108 gaurav]$ ls
+ls: cannot open directory '.': Permission denied
+[deepak@ip-172-31-8-108 gaurav]$ cd ..
+[deepak@ip-172-31-8-108 home]$ exit
+exit
+[root@ip-172-31-8-108 home]# ls -l
+total 0
+drwx------. 2 deepak   deepak   83 Sep 18 11:51 deepak
+drwx------. 3 ec2-user ec2-user 74 Sep 18 11:37 ec2-user
+drwx-----x. 2 gaurav   gaurav   62 Sep 18 11:56 gaurav
+[root@ip-172-31-8-108 home]# chmod o+r gaurav
+[root@ip-172-31-8-108 home]# su deepak
+[deepak@ip-172-31-8-108 home]$ cd gaurav
+[deepak@ip-172-31-8-108 gaurav]$ ls
+[deepak@ip-172-31-8-108 gaurav]$ ls
+[deepak@ip-172-31-8-108 gaurav]$ mkdir mygaurav
+mkdir: cannot create directory ‘mygaurav’: Permission denied
+[deepak@ip-172-31-8-108 gaurav]$ exit
+exit
+[root@ip-172-31-8-108 home]# chmod o+w gaurav
+[root@ip-172-31-8-108 home]# su deepak
+[deepak@ip-172-31-8-108 home]$ cd gaurav
+[deepak@ip-172-31-8-108 gaurav]$ mkdir mygaurav
+[deepak@ip-172-31-8-108 gaurav]$ ls
+mygaurav
+[deepak@ip-172-31-8-108 gaurav]$ exit
+exit
+[root@ip-172-31-8-108 home]# ls -l
+total 0
+drwx------. 2 deepak   deepak   83 Sep 18 11:51 deepak
+drwx------. 3 ec2-user ec2-user 74 Sep 18 11:37 ec2-user
+drwx---rwx. 3 gaurav   gaurav   78 Sep 18 12:04 gaurav
+[root@ip-172-31-8-108 home]# su deepak
+[deepak@ip-172-31-8-108 home]$ cd ..
+[deepak@ip-172-31-8-108 /]$ ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[deepak@ip-172-31-8-108 /]$ ls -l
+total 32
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 bin -> usr/bin
+dr-xr-xr-x.   5 root root 16384 Aug 13 21:08 boot
+drwxr-xr-x.  15 root root  3040 Sep 18 11:37 dev
+drwxr-xr-x.  76 root root 16384 Sep 18 11:57 etc
+drwxr-xr-x.   5 root root    50 Sep 18 11:56 home
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 lib -> usr/lib
+lrwxrwxrwx.   1 root root     9 Jan 30  2023 lib64 -> usr/lib64
+drwxr-xr-x.   2 root root     6 Aug 13 21:06 local
+drwxr-xr-x.   2 root root     6 Jan 30  2023 media
+drwxr-xr-x.   2 root root     6 Jan 30  2023 mnt
+drwxr-xr-x.   3 root root    17 Aug 13 21:08 opt
+dr-xr-xr-x. 164 root root     0 Sep 18 11:37 proc
+dr-xr-x---.   3 root root   103 Aug 13 21:08 root
+drwxr-xr-x.  27 root root   820 Sep 18 11:37 run
+lrwxrwxrwx.   1 root root     8 Jan 30  2023 sbin -> usr/sbin
+drwxr-xr-x.   2 root root     6 Jan 30  2023 srv
+dr-xr-xr-x.  13 root root     0 Sep 18 11:37 sys
+drwxrwxrwt.  11 root root   220 Sep 18 12:04 tmp
+drwxr-xr-x.  12 root root   144 Aug 13 21:07 usr
+drwxr-xr-x.  19 root root   266 Sep 18 11:37 var
+[deepak@ip-172-31-8-108 /]$ mkdir madebydee
+mkdir: cannot create directory ‘madebydee’: Permission denied
+[deepak@ip-172-31-8-108 /]$ pwd
+/
+[deepak@ip-172-31-8-108 /]$ sudo mkdir madebydee
+[sudo] password for deepak:
+deepak is not in the sudoers file.
+[deepak@ip-172-31-8-108 /]$ ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[deepak@ip-172-31-8-108 /]$ exit
+exit
+[root@ip-172-31-8-108 home]# cat /etc/group
+root:x:0:
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:ec2-user
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+wheel:x:10:ec2-user
+cdrom:x:11:
+mail:x:12:
+man:x:15:
+dialout:x:18:
+floppy:x:19:
+games:x:20:
+tape:x:33:
+video:x:39:
+ftp:x:50:
+lock:x:54:
+audio:x:63:
+users:x:100:
+nobody:x:65534:
+utmp:x:22:
+utempter:x:35:
+dbus:x:81:
+input:x:104:
+kvm:x:36:
+render:x:105:
+sgx:x:106:
+systemd-journal:x:190:ec2-user
+systemd-network:x:192:
+systemd-oom:x:999:
+systemd-resolve:x:193:
+ssh_keys:x:998:
+sshd:x:74:
+rpc:x:32:
+libstoragemgmt:x:997:
+systemd-coredump:x:996:
+systemd-timesync:x:995:
+chrony:x:994:
+ec2-instance-connect:x:993:
+stapusr:x:156:
+stapsys:x:157:
+stapdev:x:158:
+stapunpriv:x:159:stapunpriv
+rpcuser:x:29:
+tcpdump:x:72:
+screen:x:84:
+ec2-user:x:1000:
+deepak:x:1003:
+gaurav:x:1004:
+[root@ip-172-31-8-108 home]# gpasswd deepak root
+Usage: gpasswd [option] GROUP
+
+Options:
+  -a, --add USER                add USER to GROUP
+  -d, --delete USER             remove USER from GROUP
+  -h, --help                    display this help message and exit
+  -Q, --root CHROOT_DIR         directory to chroot into
+  -r, --delete-password         remove the GROUP's password
+  -R, --restrict                restrict access to GROUP to its members
+  -M, --members USER,...        set the list of members of GROUP
+  -A, --administrators ADMIN,...
+                                set the list of administrators for GROUP
+Except for the -A and -M options, the options cannot be combined.
+[root@ip-172-31-8-108 home]# gpasswd -a deepak root
+Adding user deepak to group root
+[root@ip-172-31-8-108 home]# cat /etc/group
+root:x:0:deepak
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:ec2-user
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+wheel:x:10:ec2-user
+cdrom:x:11:
+mail:x:12:
+man:x:15:
+dialout:x:18:
+floppy:x:19:
+games:x:20:
+tape:x:33:
+video:x:39:
+ftp:x:50:
+lock:x:54:
+audio:x:63:
+users:x:100:
+nobody:x:65534:
+utmp:x:22:
+utempter:x:35:
+dbus:x:81:
+input:x:104:
+kvm:x:36:
+render:x:105:
+sgx:x:106:
+systemd-journal:x:190:ec2-user
+systemd-network:x:192:
+systemd-oom:x:999:
+systemd-resolve:x:193:
+ssh_keys:x:998:
+sshd:x:74:
+rpc:x:32:
+libstoragemgmt:x:997:
+systemd-coredump:x:996:
+systemd-timesync:x:995:
+chrony:x:994:
+ec2-instance-connect:x:993:
+stapusr:x:156:
+stapsys:x:157:
+stapdev:x:158:
+stapunpriv:x:159:stapunpriv
+rpcuser:x:29:
+tcpdump:x:72:
+screen:x:84:
+ec2-user:x:1000:
+deepak:x:1003:
+gaurav:x:1004:
+[root@ip-172-31-8-108 home]# su deepak
+[deepak@ip-172-31-8-108 home]$ cd /
+[deepak@ip-172-31-8-108 /]$ mkdir mdbydpk
+mkdir: cannot create directory ‘mdbydpk’: Permission denied
+[deepak@ip-172-31-8-108 /]$ ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[deepak@ip-172-31-8-108 /]$ ls -l
+total 32
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 bin -> usr/bin
+dr-xr-xr-x.   5 root root 16384 Aug 13 21:08 boot
+drwxr-xr-x.  15 root root  3040 Sep 18 11:37 dev
+drwxr-xr-x.  76 root root 16384 Sep 18 12:14 etc
+drwxr-xr-x.   5 root root    50 Sep 18 11:56 home
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 lib -> usr/lib
+lrwxrwxrwx.   1 root root     9 Jan 30  2023 lib64 -> usr/lib64
+drwxr-xr-x.   2 root root     6 Aug 13 21:06 local
+drwxr-xr-x.   2 root root     6 Jan 30  2023 media
+drwxr-xr-x.   2 root root     6 Jan 30  2023 mnt
+drwxr-xr-x.   3 root root    17 Aug 13 21:08 opt
+dr-xr-xr-x. 164 root root     0 Sep 18 11:37 proc
+dr-xr-x---.   3 root root   103 Aug 13 21:08 root
+drwxr-xr-x.  27 root root   820 Sep 18 11:37 run
+lrwxrwxrwx.   1 root root     8 Jan 30  2023 sbin -> usr/sbin
+drwxr-xr-x.   2 root root     6 Jan 30  2023 srv
+dr-xr-xr-x.  13 root root     0 Sep 18 11:37 sys
+drwxrwxrwt.  11 root root   220 Sep 18 12:14 tmp
+drwxr-xr-x.  12 root root   144 Aug 13 21:07 usr
+drwxr-xr-x.  19 root root   266 Sep 18 11:37 var
+[deepak@ip-172-31-8-108 /]$ cat /etc/group
+root:x:0:deepak
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:ec2-user
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+wheel:x:10:ec2-user
+cdrom:x:11:
+mail:x:12:
+man:x:15:
+dialout:x:18:
+floppy:x:19:
+games:x:20:
+tape:x:33:
+video:x:39:
+ftp:x:50:
+lock:x:54:
+audio:x:63:
+users:x:100:
+nobody:x:65534:
+utmp:x:22:
+utempter:x:35:
+dbus:x:81:
+input:x:104:
+kvm:x:36:
+render:x:105:
+sgx:x:106:
+systemd-journal:x:190:ec2-user
+systemd-network:x:192:
+systemd-oom:x:999:
+systemd-resolve:x:193:
+ssh_keys:x:998:
+sshd:x:74:
+rpc:x:32:
+libstoragemgmt:x:997:
+systemd-coredump:x:996:
+systemd-timesync:x:995:
+chrony:x:994:
+ec2-instance-connect:x:993:
+stapusr:x:156:
+stapsys:x:157:
+stapdev:x:158:
+stapunpriv:x:159:stapunpriv
+rpcuser:x:29:
+tcpdump:x:72:
+screen:x:84:
+ec2-user:x:1000:
+deepak:x:1003:
+gaurav:x:1004:
+[deepak@ip-172-31-8-108 /]$ cd home
+[deepak@ip-172-31-8-108 home]$ ls
+deepak  ec2-user  gaurav
+[deepak@ip-172-31-8-108 home]$ exit
+exit
+[root@ip-172-31-8-108 home]# ls
+deepak  ec2-user  gaurav
+[root@ip-172-31-8-108 home]# cd .
+[root@ip-172-31-8-108 home]# ls
+deepak  ec2-user  gaurav
+[root@ip-172-31-8-108 home]# cd ..
+[root@ip-172-31-8-108 /]# ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[root@ip-172-31-8-108 /]# cd root
+[root@ip-172-31-8-108 ~]# ls
+[root@ip-172-31-8-108 ~]# usermod -aG wheel deepak
+[root@ip-172-31-8-108 ~]# cat /etc/group
+root:x:0:deepak
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:ec2-user
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+wheel:x:10:ec2-user,deepak
+cdrom:x:11:
+mail:x:12:
+man:x:15:
+dialout:x:18:
+floppy:x:19:
+games:x:20:
+tape:x:33:
+video:x:39:
+ftp:x:50:
+lock:x:54:
+audio:x:63:
+users:x:100:
+nobody:x:65534:
+utmp:x:22:
+utempter:x:35:
+dbus:x:81:
+input:x:104:
+kvm:x:36:
+render:x:105:
+sgx:x:106:
+systemd-journal:x:190:ec2-user
+systemd-network:x:192:
+systemd-oom:x:999:
+systemd-resolve:x:193:
+ssh_keys:x:998:
+sshd:x:74:
+rpc:x:32:
+libstoragemgmt:x:997:
+systemd-coredump:x:996:
+systemd-timesync:x:995:
+chrony:x:994:
+ec2-instance-connect:x:993:
+stapusr:x:156:
+stapsys:x:157:
+stapdev:x:158:
+stapunpriv:x:159:stapunpriv
+rpcuser:x:29:
+tcpdump:x:72:
+screen:x:84:
+ec2-user:x:1000:
+deepak:x:1003:
+gaurav:x:1004:
+[root@ip-172-31-8-108 ~]# su deepak
+[deepak@ip-172-31-8-108 root]$ cd /
+[deepak@ip-172-31-8-108 /]$ ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[deepak@ip-172-31-8-108 /]$ mkdir mdbydeep
+mkdir: cannot create directory ‘mdbydeep’: Permission denied
+[deepak@ip-172-31-8-108 /]$ sudo mkdir mdbydpk
+[sudo] password for deepak:
+[deepak@ip-172-31-8-108 /]$ ls
+bin  boot  dev  etc  home  lib  lib64  local  mdbydpk  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[deepak@ip-172-31-8-108 /]$ sudo whoami
+root
+[deepak@ip-172-31-8-108 /]$ whoami
+deepak
+[deepak@ip-172-31-8-108 /]$ sudo whoami
+root
+[deepak@ip-172-31-8-108 /]$ exit
+exit
+[root@ip-172-31-8-108 ~]#
