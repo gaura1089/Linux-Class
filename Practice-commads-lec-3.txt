@@ -1,0 +1,888 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\Gaurav.26> cd downlads
+cd : Cannot find path 'C:\Users\Gaurav.26\downlads' because it does not exist.
+At line:1 char:1
++ cd downlads
++ ~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\Gaurav.26\downlads:String) [Set-Location], ItemNotFoundExcepti
+   on
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+
+PS C:\Users\Gaurav.26> cd downloads
+PS C:\Users\Gaurav.26\downloads> cd repo
+PS C:\Users\Gaurav.26\downloads\repo> cd .\Linux-mac\
+PS C:\Users\Gaurav.26\downloads\repo\Linux-mac> ls
+
+
+    Directory: C:\Users\Gaurav.26\downloads\repo\Linux-mac
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        07-09-2025     19:05                .terraform
+-a----        04-09-2025     22:02           1377 .terraform.lock.hcl
+-a----        07-09-2025     20:03              0 Dj.txt
+-a----        04-09-2025     21:48           2635 id_rsa
+-a----        04-09-2025     21:48            594 id_rsa.pub
+-a----        04-09-2025     22:03            120 keypair.tf
+-a----        08-09-2025     09:51            250 main.tf
+-a----        04-09-2025     21:46             52 provider.tf
+-a----        19-09-2025     08:06           6710 terraform.tfstate
+-a----        19-09-2025     08:06            183 terraform.tfstate.backup
+
+
+PS C:\Users\Gaurav.26\downloads\repo\Linux-mac>
+PS C:\Users\Gaurav.26\downloads\repo\Linux-mac> ssh -i id_rsa ec2-user@3.110.117.5
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Fri Sep 19 02:37:35 2025 from 103.146.110.204
+[ec2-user@ip-172-31-8-77 ~]$ ls
+[ec2-user@ip-172-31-8-77 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-172-31-8-77 ~]$ cd ../..
+[ec2-user@ip-172-31-8-77 /]$ pwd
+/
+[ec2-user@ip-172-31-8-77 /]$ sudo su
+[root@ip-172-31-8-77 /]# pwd
+/
+[root@ip-172-31-8-77 /]# ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[root@ip-172-31-8-77 /]# useradd gaurav
+[root@ip-172-31-8-77 /]# passwd gaurav
+Changing password for user gaurav.
+New password:
+Retype new password:
+passwd: all authentication tokens updated successfully.
+[root@ip-172-31-8-77 /]# useradd tanu
+[root@ip-172-31-8-77 /]# passwd tanu
+Changing password for user tanu.
+New password:
+Retype new password:
+passwd: all authentication tokens updated successfully.
+[root@ip-172-31-8-77 /]# cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:65534:65534:Kernel Overflow User:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/usr/sbin/nologin
+systemd-oom:x:999:999:systemd Userspace OOM Killer:/:/usr/sbin/nologin
+systemd-resolve:x:193:193:systemd Resolver:/:/usr/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+libstoragemgmt:x:997:997:daemon account for libstoragemgmt:/:/usr/sbin/nologin
+systemd-coredump:x:996:996:systemd Core Dumper:/:/usr/sbin/nologin
+systemd-timesync:x:995:995:systemd Time Synchronization:/:/usr/sbin/nologin
+chrony:x:994:994:chrony system user:/var/lib/chrony:/sbin/nologin
+ec2-instance-connect:x:993:993::/home/ec2-instance-connect:/sbin/nologin
+stapunpriv:x:159:159:systemtap unprivileged user:/var/lib/stapunpriv:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+ec2-user:x:1000:1000:EC2 Default User:/home/ec2-user:/bin/bash
+gaurav:x:1001:1001::/home/gaurav:/bin/bash
+tanu:x:1002:1002::/home/tanu:/bin/bash
+[root@ip-172-31-8-77 /]#
+[root@ip-172-31-8-77 /]# groupadd vpn-access
+[root@ip-172-31-8-77 /]# pwd
+/
+[root@ip-172-31-8-77 /]# ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[root@ip-172-31-8-77 /]# mkdir mydata
+[root@ip-172-31-8-77 /]# ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  mydata  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[root@ip-172-31-8-77 /]# ls -l
+total 32
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 bin -> usr/bin
+dr-xr-xr-x.   5 root root 16384 Aug 13 21:08 boot
+drwxr-xr-x.  15 root root  3040 Sep 19 02:36 dev
+drwxr-xr-x.  76 root root 16384 Sep 19 02:48 etc
+drwxr-xr-x.   5 root root    48 Sep 19 02:47 home
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 lib -> usr/lib
+lrwxrwxrwx.   1 root root     9 Jan 30  2023 lib64 -> usr/lib64
+drwxr-xr-x.   2 root root     6 Aug 13 21:06 local
+drwxr-xr-x.   2 root root     6 Jan 30  2023 media
+drwxr-xr-x.   2 root root     6 Jan 30  2023 mnt
+drwxr-xr-x.   2 root root     6 Sep 19 02:49 mydata
+drwxr-xr-x.   3 root root    17 Aug 13 21:08 opt
+dr-xr-xr-x. 163 root root     0 Sep 19 02:36 proc
+dr-xr-x---.   3 root root   103 Aug 13 21:08 root
+drwxr-xr-x.  27 root root   820 Sep 19 02:36 run
+lrwxrwxrwx.   1 root root     8 Jan 30  2023 sbin -> usr/sbin
+drwxr-xr-x.   2 root root     6 Jan 30  2023 srv
+dr-xr-xr-x.  13 root root     0 Sep 19 02:36 sys
+drwxrwxrwt.  11 root root   220 Sep 19 02:48 tmp
+drwxr-xr-x.  12 root root   144 Aug 13 21:07 usr
+drwxr-xr-x.  19 root root   266 Sep 19 02:36 var
+[root@ip-172-31-8-77 /]# su gaurav
+[gaurav@ip-172-31-8-77 /]$ ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  mydata  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[gaurav@ip-172-31-8-77 /]$ cd mydata
+[gaurav@ip-172-31-8-77 mydata]$ touch newfile
+touch: cannot touch 'newfile': Permission denied
+[gaurav@ip-172-31-8-77 mydata]$ cd ..
+[gaurav@ip-172-31-8-77 /]$ exit
+exit
+[root@ip-172-31-8-77 /]# ln mydata /home/gaurav/lnk-mydata
+ln: mydata: hard link not allowed for directory
+[root@ip-172-31-8-77 /]# ln -l mydata /home/gaurav/lnk-mydata
+ln: invalid option -- 'l'
+Try 'ln --help' for more information.
+[root@ip-172-31-8-77 /]# ln -s mydata /home/gaurav/lnk-mydata
+[root@ip-172-31-8-77 /]# cd mydata
+[root@ip-172-31-8-77 mydata]# cat >file
+HI Team,
+Gaurav[root@ip-172-31-8-77 mydata]#
+[root@ip-172-31-8-77 mydata]#
+[root@ip-172-31-8-77 mydata]# cd ..
+[root@ip-172-31-8-77 /]# su gaurav
+[gaurav@ip-172-31-8-77 /]$ ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  mydata  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[gaurav@ip-172-31-8-77 /]$ cd ~
+[gaurav@ip-172-31-8-77 ~]$ ls
+lnk-mydata
+[gaurav@ip-172-31-8-77 ~]$ cd lnk-mydata
+bash: cd: lnk-mydata: No such file or directory
+[gaurav@ip-172-31-8-77 ~]$ cat lnk-mydata
+cat: lnk-mydata: No such file or directory
+[gaurav@ip-172-31-8-77 ~]$ cd lnk-mydata
+bash: cd: lnk-mydata: No such file or directory
+[gaurav@ip-172-31-8-77 ~]$ ls -l
+total 0
+lrwxrwxrwx. 1 root root 6 Sep 19 02:52 lnk-mydata -> mydata
+[gaurav@ip-172-31-8-77 ~]$ rm -rf *
+[gaurav@ip-172-31-8-77 ~]$ ls
+[gaurav@ip-172-31-8-77 ~]$ exit
+exit
+[root@ip-172-31-8-77 /]# ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  mydata  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[root@ip-172-31-8-77 /]# cd mydata
+[root@ip-172-31-8-77 mydata]# ls
+file
+[root@ip-172-31-8-77 mydata]# caat file
+bash: caat: command not found
+[root@ip-172-31-8-77 mydata]# cat file
+HI Team,
+Gaurav[root@ip-172-31-8-77 mydata]#
+[root@ip-172-31-8-77 mydata]#
+[root@ip-172-31-8-77 mydata]#
+[root@ip-172-31-8-77 mydata]# ln -s file /home/gaurav/soft-link
+[root@ip-172-31-8-77 mydata]# su gaurav
+[gaurav@ip-172-31-8-77 mydata]$ cd ~
+[gaurav@ip-172-31-8-77 ~]$ ls
+soft-link
+[gaurav@ip-172-31-8-77 ~]$ cat soft-link
+cat: soft-link: No such file or directory
+[gaurav@ip-172-31-8-77 ~]$ c
+bash: c: command not found
+[gaurav@ip-172-31-8-77 ~]$ vi soft-link
+[gaurav@ip-172-31-8-77 ~]$  [New] 4L, 12B written
+[gaurav@ip-172-31-8-77 ~]$ cat soft-link
+
+
+
+hi Haira
+[gaurav@ip-172-31-8-77 ~]$ exit
+exit
+[root@ip-172-31-8-77 mydata]# cat file
+HI Team,
+Gaurav[root@ip-172-31-8-77 mydata]#
+[root@ip-172-31-8-77 mydata]#
+[root@ip-172-31-8-77 mydata]# ls -l
+total 4
+-rw-r--r--. 1 root root 15 Sep 19 02:53 file
+[root@ip-172-31-8-77 mydata]# chmod o+wx file
+[root@ip-172-31-8-77 mydata]# ls -l
+total 4
+-rw-r--rwx. 1 root root 15 Sep 19 02:53 file
+[root@ip-172-31-8-77 mydata]# su gaurav
+[gaurav@ip-172-31-8-77 mydata]$ cat file
+HI Team,
+Gaurav[gaurav@ip-172-31-8-77 mydata]$ exit
+exit
+[root@ip-172-31-8-77 mydata]# ls -l
+total 4
+-rw-r--rwx. 1 root root 15 Sep 19 02:53 file
+[root@ip-172-31-8-77 mydata]# chmod o-wx file
+[root@ip-172-31-8-77 mydata]# ls -l
+total 4
+-rw-r--r--. 1 root root 15 Sep 19 02:53 file
+[root@ip-172-31-8-77 mydata]# su gaurav
+[gaurav@ip-172-31-8-77 mydata]$ cat file
+HI Team,
+Gaurav[gaurav@ip-172-31-8-77 mydata]$ exit
+exit
+[root@ip-172-31-8-77 mydata]# ls -l
+total 4
+-rw-r--r--. 1 root root 15 Sep 19 02:53 file
+[root@ip-172-31-8-77 mydata]# chmod o-r file
+[root@ip-172-31-8-77 mydata]# ls -l
+total 4
+-rw-r-----. 1 root root 15 Sep 19 02:53 file
+[root@ip-172-31-8-77 mydata]# su gaurav
+[gaurav@ip-172-31-8-77 mydata]$ cat file
+cat: file: Permission denied
+[gaurav@ip-172-31-8-77 mydata]$ exit
+exit
+[root@ip-172-31-8-77 mydata]# ls -l
+total 4
+-rw-r-----. 1 root root 15 Sep 19 02:53 file
+[root@ip-172-31-8-77 mydata]# chown gaurav file
+[root@ip-172-31-8-77 mydata]# ls -l
+total 4
+-rw-r-----. 1 gaurav root 15 Sep 19 02:53 file
+[root@ip-172-31-8-77 mydata]# su gaurv\av
+su: user gaurvav does not exist or the user entry does not contain all the required fields
+[root@ip-172-31-8-77 mydata]# su gaurv
+su: user gaurv does not exist or the user entry does not contain all the required fields
+[root@ip-172-31-8-77 mydata]# su gaurav
+[gaurav@ip-172-31-8-77 mydata]$ ls
+file
+[gaurav@ip-172-31-8-77 mydata]$ cat file
+HI Team,
+Gaurav[gaurav@ip-172-31-8-77 mydata]$ cd ~
+[gaurav@ip-172-31-8-77 ~]$ ls
+file  soft-link
+[gaurav@ip-172-31-8-77 ~]$ cat soft-link
+
+
+
+hi Haira
+[gaurav@ip-172-31-8-77 ~]$ exit
+exit
+[root@ip-172-31-8-77 mydata]# ls -l
+total 4
+-rw-r-----. 1 gaurav root 15 Sep 19 02:53 file
+[root@ip-172-31-8-77 mydata]# chown root file
+[root@ip-172-31-8-77 mydata]# ls -l
+total 4
+-rw-r-----. 1 root root 15 Sep 19 02:53 file
+[root@ip-172-31-8-77 mydata]# su gaurav
+[gaurav@ip-172-31-8-77 mydata]$ ls
+file
+[gaurav@ip-172-31-8-77 mydata]$ cd ~
+[gaurav@ip-172-31-8-77 ~]$ ls
+file  soft-link
+[gaurav@ip-172-31-8-77 ~]$ cat soft-link
+
+
+
+hi Haira
+[gaurav@ip-172-31-8-77 ~]$ ls -l
+total 4
+-rw-rw-r--. 1 gaurav gaurav 12 Sep 19 02:57 file
+lrwxrwxrwx. 1 root   root    4 Sep 19 02:56 soft-link -> file
+[gaurav@ip-172-31-8-77 ~]$ exit
+exit
+[root@ip-172-31-8-77 mydata]# cd ..
+[root@ip-172-31-8-77 /]# cd home/gaurav/
+[root@ip-172-31-8-77 gaurav]# ls
+file  soft-link
+[root@ip-172-31-8-77 gaurav]# ls -l
+total 4
+-rw-rw-r--. 1 gaurav gaurav 12 Sep 19 02:57 file
+lrwxrwxrwx. 1 root   root    4 Sep 19 02:56 soft-link -> file
+[root@ip-172-31-8-77 gaurav]# chmod 700 soft-link
+[root@ip-172-31-8-77 gaurav]# ls -l
+total 4
+-rwx------. 1 gaurav gaurav 12 Sep 19 02:57 file
+lrwxrwxrwx. 1 root   root    4 Sep 19 02:56 soft-link -> file
+[root@ip-172-31-8-77 gaurav]# chmod 740 soft-link
+[root@ip-172-31-8-77 gaurav]# ls -l
+total 4
+-rwxr-----. 1 gaurav gaurav 12 Sep 19 02:57 file
+lrwxrwxrwx. 1 root   root    4 Sep 19 02:56 soft-link -> file
+[root@ip-172-31-8-77 gaurav]# cd ..
+[root@ip-172-31-8-77 home]# ls
+ec2-user  gaurav  tanu
+[root@ip-172-31-8-77 home]# cd ..
+[root@ip-172-31-8-77 /]# ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  mydata  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[root@ip-172-31-8-77 /]# mkdir shd-fol
+[root@ip-172-31-8-77 /]# ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  mydata  opt  proc  root  run  sbin  shd-fol  srv  sys  tmp  usr  var
+[root@ip-172-31-8-77 /]# ls -l
+total 32
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 bin -> usr/bin
+dr-xr-xr-x.   5 root root 16384 Aug 13 21:08 boot
+drwxr-xr-x.  15 root root  3040 Sep 19 02:36 dev
+drwxr-xr-x.  76 root root 16384 Sep 19 02:48 etc
+drwxr-xr-x.   5 root root    48 Sep 19 02:47 home
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 lib -> usr/lib
+lrwxrwxrwx.   1 root root     9 Jan 30  2023 lib64 -> usr/lib64
+drwxr-xr-x.   2 root root     6 Aug 13 21:06 local
+drwxr-xr-x.   2 root root     6 Jan 30  2023 media
+drwxr-xr-x.   2 root root     6 Jan 30  2023 mnt
+drwxr-xr-x.   2 root root    18 Sep 19 02:53 mydata
+drwxr-xr-x.   3 root root    17 Aug 13 21:08 opt
+dr-xr-xr-x. 162 root root     0 Sep 19 02:36 proc
+dr-xr-x---.   3 root root   103 Aug 13 21:08 root
+drwxr-xr-x.  27 root root   820 Sep 19 02:36 run
+lrwxrwxrwx.   1 root root     8 Jan 30  2023 sbin -> usr/sbin
+drwxr-xr-x.   2 root root     6 Sep 19 03:10 shd-fol
+drwxr-xr-x.   2 root root     6 Jan 30  2023 srv
+dr-xr-xr-x.  13 root root     0 Sep 19 02:36 sys
+drwxrwxrwt.  11 root root   220 Sep 19 03:10 tmp
+drwxr-xr-x.  12 root root   144 Aug 13 21:07 usr
+drwxr-xr-x.  19 root root   266 Sep 19 02:36 var
+[root@ip-172-31-8-77 /]# su gaurav
+[gaurav@ip-172-31-8-77 /]$ ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  mydata  opt  proc  root  run  sbin  shd-fol  srv  sys  tmp  usr  var
+[gaurav@ip-172-31-8-77 /]$ exit
+exit
+[root@ip-172-31-8-77 /]# cd shd-fol
+[root@ip-172-31-8-77 shd-fol]# cat > imp-file
+Hi Welcome you are inside the file... !
+[root@ip-172-31-8-77 shd-fol]# cat imp-file
+Hi Welcome you are inside the file... !
+[root@ip-172-31-8-77 shd-fol]# ls -l
+total 4
+-rw-r--r--. 1 root root 40 Sep 19 03:12 imp-file
+[root@ip-172-31-8-77 shd-fol]# cd ..
+[root@ip-172-31-8-77 /]# cd /etc/group
+bash: cd: /etc/group: Not a directory
+[root@ip-172-31-8-77 /]# cd etc/group
+bash: cd: etc/group: Not a directory
+[root@ip-172-31-8-77 /]# cat etc/group
+root:x:0:
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:ec2-user
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+wheel:x:10:ec2-user
+cdrom:x:11:
+mail:x:12:
+man:x:15:
+dialout:x:18:
+floppy:x:19:
+games:x:20:
+tape:x:33:
+video:x:39:
+ftp:x:50:
+lock:x:54:
+audio:x:63:
+users:x:100:
+nobody:x:65534:
+utmp:x:22:
+utempter:x:35:
+dbus:x:81:
+input:x:104:
+kvm:x:36:
+render:x:105:
+sgx:x:106:
+systemd-journal:x:190:ec2-user
+systemd-network:x:192:
+systemd-oom:x:999:
+systemd-resolve:x:193:
+ssh_keys:x:998:
+sshd:x:74:
+rpc:x:32:
+libstoragemgmt:x:997:
+systemd-coredump:x:996:
+systemd-timesync:x:995:
+chrony:x:994:
+ec2-instance-connect:x:993:
+stapusr:x:156:
+stapsys:x:157:
+stapdev:x:158:
+stapunpriv:x:159:stapunpriv
+rpcuser:x:29:
+tcpdump:x:72:
+screen:x:84:
+ec2-user:x:1000:
+gaurav:x:1001:
+tanu:x:1002:
+vpn-access:x:1003:
+[root@ip-172-31-8-77 /]# ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  mydata  opt  proc  root  run  sbin  shd-fol  srv  sys  tmp  usr  var
+[root@ip-172-31-8-77 /]# cd shd-fol
+[root@ip-172-31-8-77 shd-fol]# ls -l
+total 4
+-rw-r--r--. 1 root root 40 Sep 19 03:12 imp-file
+[root@ip-172-31-8-77 shd-fol]# chomd g+wx imp-file
+bash: chomd: command not found
+[root@ip-172-31-8-77 shd-fol]# chmod g+wx imp-file
+[root@ip-172-31-8-77 shd-fol]# chgrp vpn-access imp-file
+[root@ip-172-31-8-77 shd-fol]# ls -l
+total 4
+-rw-rwxr--. 1 root vpn-access 40 Sep 19 03:12 imp-file
+[root@ip-172-31-8-77 shd-fol]# cd ..
+[root@ip-172-31-8-77 /]# ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  mydata  opt  proc  root  run  sbin  shd-fol  srv  sys  tmp  usr  var
+[root@ip-172-31-8-77 /]# su gaurav
+[gaurav@ip-172-31-8-77 /]$ cd shd-fol
+[gaurav@ip-172-31-8-77 shd-fol]$ ls
+imp-file
+[gaurav@ip-172-31-8-77 shd-fol]$ cat imp-file
+Hi Welcome you are inside the file... !
+[gaurav@ip-172-31-8-77 shd-fol]$ cat >> imp-file
+bash: imp-file: Permission denied
+[gaurav@ip-172-31-8-77 shd-fol]$ cd ..
+[gaurav@ip-172-31-8-77 /]$ ls -l
+total 32
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 bin -> usr/bin
+dr-xr-xr-x.   5 root root 16384 Aug 13 21:08 boot
+drwxr-xr-x.  15 root root  3040 Sep 19 02:36 dev
+drwxr-xr-x.  76 root root 16384 Sep 19 02:48 etc
+drwxr-xr-x.   5 root root    48 Sep 19 02:47 home
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 lib -> usr/lib
+lrwxrwxrwx.   1 root root     9 Jan 30  2023 lib64 -> usr/lib64
+drwxr-xr-x.   2 root root     6 Aug 13 21:06 local
+drwxr-xr-x.   2 root root     6 Jan 30  2023 media
+drwxr-xr-x.   2 root root     6 Jan 30  2023 mnt
+drwxr-xr-x.   2 root root    18 Sep 19 02:53 mydata
+drwxr-xr-x.   3 root root    17 Aug 13 21:08 opt
+dr-xr-xr-x. 161 root root     0 Sep 19 02:36 proc
+dr-xr-x---.   3 root root   103 Aug 13 21:08 root
+drwxr-xr-x.  27 root root   820 Sep 19 02:36 run
+lrwxrwxrwx.   1 root root     8 Jan 30  2023 sbin -> usr/sbin
+drwxr-xr-x.   2 root root    22 Sep 19 03:11 shd-fol
+drwxr-xr-x.   2 root root     6 Jan 30  2023 srv
+dr-xr-xr-x.  13 root root     0 Sep 19 02:36 sys
+drwxrwxrwt.  11 root root   220 Sep 19 03:14 tmp
+drwxr-xr-x.  12 root root   144 Aug 13 21:07 usr
+drwxr-xr-x.  19 root root   266 Sep 19 02:36 var
+[gaurav@ip-172-31-8-77 /]$ chmod o-r shd-fol
+chmod: changing permissions of 'shd-fol': Operation not permitted
+[gaurav@ip-172-31-8-77 /]$ exit
+exit
+[root@ip-172-31-8-77 /]# chmod o-r shd-fol
+[root@ip-172-31-8-77 /]# ls -l
+total 32
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 bin -> usr/bin
+dr-xr-xr-x.   5 root root 16384 Aug 13 21:08 boot
+drwxr-xr-x.  15 root root  3040 Sep 19 02:36 dev
+drwxr-xr-x.  76 root root 16384 Sep 19 02:48 etc
+drwxr-xr-x.   5 root root    48 Sep 19 02:47 home
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 lib -> usr/lib
+lrwxrwxrwx.   1 root root     9 Jan 30  2023 lib64 -> usr/lib64
+drwxr-xr-x.   2 root root     6 Aug 13 21:06 local
+drwxr-xr-x.   2 root root     6 Jan 30  2023 media
+drwxr-xr-x.   2 root root     6 Jan 30  2023 mnt
+drwxr-xr-x.   2 root root    18 Sep 19 02:53 mydata
+drwxr-xr-x.   3 root root    17 Aug 13 21:08 opt
+dr-xr-xr-x. 160 root root     0 Sep 19 02:36 proc
+dr-xr-x---.   3 root root   103 Aug 13 21:08 root
+drwxr-xr-x.  27 root root   820 Sep 19 02:36 run
+lrwxrwxrwx.   1 root root     8 Jan 30  2023 sbin -> usr/sbin
+drwxr-x--x.   2 root root    22 Sep 19 03:11 shd-fol
+drwxr-xr-x.   2 root root     6 Jan 30  2023 srv
+dr-xr-xr-x.  13 root root     0 Sep 19 02:36 sys
+drwxrwxrwt.  11 root root   220 Sep 19 03:16 tmp
+drwxr-xr-x.  12 root root   144 Aug 13 21:07 usr
+drwxr-xr-x.  19 root root   266 Sep 19 02:36 var
+[root@ip-172-31-8-77 /]# su gaurav
+[gaurav@ip-172-31-8-77 /]$ cd shd-fol
+[gaurav@ip-172-31-8-77 shd-fol]$ ls
+ls: cannot open directory '.': Permission denied
+[gaurav@ip-172-31-8-77 shd-fol]$ exit
+exit
+[root@ip-172-31-8-77 /]# chmod o-x shd-fol
+[root@ip-172-31-8-77 /]# ls -l
+total 32
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 bin -> usr/bin
+dr-xr-xr-x.   5 root root 16384 Aug 13 21:08 boot
+drwxr-xr-x.  15 root root  3040 Sep 19 02:36 dev
+drwxr-xr-x.  76 root root 16384 Sep 19 02:48 etc
+drwxr-xr-x.   5 root root    48 Sep 19 02:47 home
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 lib -> usr/lib
+lrwxrwxrwx.   1 root root     9 Jan 30  2023 lib64 -> usr/lib64
+drwxr-xr-x.   2 root root     6 Aug 13 21:06 local
+drwxr-xr-x.   2 root root     6 Jan 30  2023 media
+drwxr-xr-x.   2 root root     6 Jan 30  2023 mnt
+drwxr-xr-x.   2 root root    18 Sep 19 02:53 mydata
+drwxr-xr-x.   3 root root    17 Aug 13 21:08 opt
+dr-xr-xr-x. 160 root root     0 Sep 19 02:36 proc
+dr-xr-x---.   3 root root   103 Aug 13 21:08 root
+drwxr-xr-x.  27 root root   820 Sep 19 02:36 run
+lrwxrwxrwx.   1 root root     8 Jan 30  2023 sbin -> usr/sbin
+drwxr-x---.   2 root root    22 Sep 19 03:11 shd-fol
+drwxr-xr-x.   2 root root     6 Jan 30  2023 srv
+dr-xr-xr-x.  13 root root     0 Sep 19 02:36 sys
+drwxrwxrwt.  11 root root   220 Sep 19 03:17 tmp
+drwxr-xr-x.  12 root root   144 Aug 13 21:07 usr
+drwxr-xr-x.  19 root root   266 Sep 19 02:36 var
+[root@ip-172-31-8-77 /]# su gaurav
+[gaurav@ip-172-31-8-77 /]$ cd shd-fol
+bash: cd: shd-fol: Permission denied
+[gaurav@ip-172-31-8-77 /]$ exit
+exit
+[root@ip-172-31-8-77 /]# chmod o+x shd-fol
+[root@ip-172-31-8-77 /]# ls -l
+total 32
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 bin -> usr/bin
+dr-xr-xr-x.   5 root root 16384 Aug 13 21:08 boot
+drwxr-xr-x.  15 root root  3040 Sep 19 02:36 dev
+drwxr-xr-x.  76 root root 16384 Sep 19 02:48 etc
+drwxr-xr-x.   5 root root    48 Sep 19 02:47 home
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 lib -> usr/lib
+lrwxrwxrwx.   1 root root     9 Jan 30  2023 lib64 -> usr/lib64
+drwxr-xr-x.   2 root root     6 Aug 13 21:06 local
+drwxr-xr-x.   2 root root     6 Jan 30  2023 media
+drwxr-xr-x.   2 root root     6 Jan 30  2023 mnt
+drwxr-xr-x.   2 root root    18 Sep 19 02:53 mydata
+drwxr-xr-x.   3 root root    17 Aug 13 21:08 opt
+dr-xr-xr-x. 160 root root     0 Sep 19 02:36 proc
+dr-xr-x---.   3 root root   103 Aug 13 21:08 root
+drwxr-xr-x.  27 root root   820 Sep 19 02:36 run
+lrwxrwxrwx.   1 root root     8 Jan 30  2023 sbin -> usr/sbin
+drwxr-x--x.   2 root root    22 Sep 19 03:11 shd-fol
+drwxr-xr-x.   2 root root     6 Jan 30  2023 srv
+dr-xr-xr-x.  13 root root     0 Sep 19 02:36 sys
+drwxrwxrwt.  11 root root   220 Sep 19 03:17 tmp
+drwxr-xr-x.  12 root root   144 Aug 13 21:07 usr
+drwxr-xr-x.  19 root root   266 Sep 19 02:36 var
+[root@ip-172-31-8-77 /]# su gaurav
+[gaurav@ip-172-31-8-77 /]$ cd shd-fol
+[gaurav@ip-172-31-8-77 shd-fol]$ ls
+ls: cannot open directory '.': Permission denied
+[gaurav@ip-172-31-8-77 shd-fol]$ exit
+exit
+[root@ip-172-31-8-77 /]# ls -l
+total 32
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 bin -> usr/bin
+dr-xr-xr-x.   5 root root 16384 Aug 13 21:08 boot
+drwxr-xr-x.  15 root root  3040 Sep 19 02:36 dev
+drwxr-xr-x.  76 root root 16384 Sep 19 02:48 etc
+drwxr-xr-x.   5 root root    48 Sep 19 02:47 home
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 lib -> usr/lib
+lrwxrwxrwx.   1 root root     9 Jan 30  2023 lib64 -> usr/lib64
+drwxr-xr-x.   2 root root     6 Aug 13 21:06 local
+drwxr-xr-x.   2 root root     6 Jan 30  2023 media
+drwxr-xr-x.   2 root root     6 Jan 30  2023 mnt
+drwxr-xr-x.   2 root root    18 Sep 19 02:53 mydata
+drwxr-xr-x.   3 root root    17 Aug 13 21:08 opt
+dr-xr-xr-x. 160 root root     0 Sep 19 02:36 proc
+dr-xr-x---.   3 root root   103 Aug 13 21:08 root
+drwxr-xr-x.  27 root root   820 Sep 19 02:36 run
+lrwxrwxrwx.   1 root root     8 Jan 30  2023 sbin -> usr/sbin
+drwxr-x--x.   2 root root    22 Sep 19 03:11 shd-fol
+drwxr-xr-x.   2 root root     6 Jan 30  2023 srv
+dr-xr-xr-x.  13 root root     0 Sep 19 02:36 sys
+drwxrwxrwt.  11 root root   220 Sep 19 03:18 tmp
+drwxr-xr-x.  12 root root   144 Aug 13 21:07 usr
+drwxr-xr-x.  19 root root   266 Sep 19 02:36 var
+[root@ip-172-31-8-77 /]#
+[root@ip-172-31-8-77 /]# chmod o+r sh-fol
+chmod: cannot access 'sh-fol': No such file or directory
+[root@ip-172-31-8-77 /]# chmod o+r shd-fol
+[root@ip-172-31-8-77 /]# ls -l
+total 32
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 bin -> usr/bin
+dr-xr-xr-x.   5 root root 16384 Aug 13 21:08 boot
+drwxr-xr-x.  15 root root  3040 Sep 19 02:36 dev
+drwxr-xr-x.  76 root root 16384 Sep 19 02:48 etc
+drwxr-xr-x.   5 root root    48 Sep 19 02:47 home
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 lib -> usr/lib
+lrwxrwxrwx.   1 root root     9 Jan 30  2023 lib64 -> usr/lib64
+drwxr-xr-x.   2 root root     6 Aug 13 21:06 local
+drwxr-xr-x.   2 root root     6 Jan 30  2023 media
+drwxr-xr-x.   2 root root     6 Jan 30  2023 mnt
+drwxr-xr-x.   2 root root    18 Sep 19 02:53 mydata
+drwxr-xr-x.   3 root root    17 Aug 13 21:08 opt
+dr-xr-xr-x. 160 root root     0 Sep 19 02:36 proc
+dr-xr-x---.   3 root root   103 Aug 13 21:08 root
+drwxr-xr-x.  27 root root   820 Sep 19 02:36 run
+lrwxrwxrwx.   1 root root     8 Jan 30  2023 sbin -> usr/sbin
+drwxr-xr-x.   2 root root    22 Sep 19 03:11 shd-fol
+drwxr-xr-x.   2 root root     6 Jan 30  2023 srv
+dr-xr-xr-x.  13 root root     0 Sep 19 02:36 sys
+drwxrwxrwt.  11 root root   220 Sep 19 03:18 tmp
+drwxr-xr-x.  12 root root   144 Aug 13 21:07 usr
+drwxr-xr-x.  19 root root   266 Sep 19 02:36 var
+[root@ip-172-31-8-77 /]# su gaurav
+[gaurav@ip-172-31-8-77 /]$ cd shd-fol
+[gaurav@ip-172-31-8-77 shd-fol]$ ls
+imp-file
+[gaurav@ip-172-31-8-77 shd-fol]$ vi imp0file
+
+[1]+  Stopped                 vi imp0file
+[gaurav@ip-172-31-8-77 shd-fol]$ ls
+imp-file
+[gaurav@ip-172-31-8-77 shd-fol]$ cat imp-file
+Hi Welcome you are inside the file... !
+[gaurav@ip-172-31-8-77 shd-fol]$ ls -l
+total 4
+-rw-rwxr--. 1 root vpn-access 40 Sep 19 03:12 imp-file
+[gaurav@ip-172-31-8-77 shd-fol]$ exit
+exit
+There are stopped jobs.
+[gaurav@ip-172-31-8-77 shd-fol]$ ls
+imp-file
+[gaurav@ip-172-31-8-77 shd-fol]$ ls -l
+total 4
+-rw-rwxr--. 1 root vpn-access 40 Sep 19 03:12 imp-file
+[gaurav@ip-172-31-8-77 shd-fol]$ chmod o-r imp-file
+chmod: changing permissions of 'imp-file': Operation not permitted
+[gaurav@ip-172-31-8-77 shd-fol]$ exit
+exit
+There are stopped jobs.
+[gaurav@ip-172-31-8-77 shd-fol]$ exit
+exit
+Vim: Caught deadly signal TERM
+Vim: preserving files...
+Vim: Finished.
+[root@ip-172-31-8-77 /]#
+exit
+Vim: Caught deadly signal TERM
+Vim: preserving files...
+Vim: Finished.
+[root@ip-172-31-8-77 /]# ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  mydata  opt  proc  root  run  sbin  shd-fol  srv  sys  tmp  usr  var
+[root@ip-172-31-8-77 /]# cd shd-fol
+[root@ip-172-31-8-77 shd-fol]# ls -l
+total 4
+-rw-rwxr--. 1 root vpn-access 40 Sep 19 03:12 imp-file
+[root@ip-172-31-8-77 shd-fol]# chmod o-r imp-file
+[root@ip-172-31-8-77 shd-fol]# ls
+imp-file
+[root@ip-172-31-8-77 shd-fol]# ls -l
+total 4
+-rw-rwx---. 1 root vpn-access 40 Sep 19 03:12 imp-file
+[root@ip-172-31-8-77 shd-fol]# su gaurav
+[gaurav@ip-172-31-8-77 shd-fol]$ cat imp-file
+cat: imp-file: Permission denied
+[gaurav@ip-172-31-8-77 shd-fol]$ su tanu
+Password:
+[tanu@ip-172-31-8-77 shd-fol]$ cat imp-file
+cat: imp-file: Permission denied
+[tanu@ip-172-31-8-77 shd-fol]$ exit
+exit
+[gaurav@ip-172-31-8-77 shd-fol]$ exit
+exit
+[root@ip-172-31-8-77 shd-fol]# ls -l
+total 4
+-rw-rwx---. 1 root vpn-access 40 Sep 19 03:12 imp-file
+[root@ip-172-31-8-77 shd-fol]# gpasswd vp-access gaurav
+Usage: gpasswd [option] GROUP
+
+Options:
+  -a, --add USER                add USER to GROUP
+  -d, --delete USER             remove USER from GROUP
+  -h, --help                    display this help message and exit
+  -Q, --root CHROOT_DIR         directory to chroot into
+  -r, --delete-password         remove the GROUP's password
+  -R, --restrict                restrict access to GROUP to its members
+  -M, --members USER,...        set the list of members of GROUP
+  -A, --administrators ADMIN,...
+                                set the list of administrators for GROUP
+Except for the -A and -M options, the options cannot be combined.
+[root@ip-172-31-8-77 shd-fol]# gpasswd -a vp-access gaurav
+gpasswd: user 'vp-access' does not exist
+[root@ip-172-31-8-77 shd-fol]# gpasswd -a vpn-access gaurav
+gpasswd: user 'vpn-access' does not exist
+[root@ip-172-31-8-77 shd-fol]# gpasswd -a gaurav vpn-access
+Adding user gaurav to group vpn-access
+[root@ip-172-31-8-77 shd-fol]# cat /etc/group
+root:x:0:
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:ec2-user
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+wheel:x:10:ec2-user
+cdrom:x:11:
+mail:x:12:
+man:x:15:
+dialout:x:18:
+floppy:x:19:
+games:x:20:
+tape:x:33:
+video:x:39:
+ftp:x:50:
+lock:x:54:
+audio:x:63:
+users:x:100:
+nobody:x:65534:
+utmp:x:22:
+utempter:x:35:
+dbus:x:81:
+input:x:104:
+kvm:x:36:
+render:x:105:
+sgx:x:106:
+systemd-journal:x:190:ec2-user
+systemd-network:x:192:
+systemd-oom:x:999:
+systemd-resolve:x:193:
+ssh_keys:x:998:
+sshd:x:74:
+rpc:x:32:
+libstoragemgmt:x:997:
+systemd-coredump:x:996:
+systemd-timesync:x:995:
+chrony:x:994:
+ec2-instance-connect:x:993:
+stapusr:x:156:
+stapsys:x:157:
+stapdev:x:158:
+stapunpriv:x:159:stapunpriv
+rpcuser:x:29:
+tcpdump:x:72:
+screen:x:84:
+ec2-user:x:1000:
+gaurav:x:1001:
+tanu:x:1002:
+vpn-access:x:1003:gaurav
+[root@ip-172-31-8-77 shd-fol]# su gaurav
+[gaurav@ip-172-31-8-77 shd-fol]$ ls -l
+total 4
+-rw-rwx---. 1 root vpn-access 40 Sep 19 03:12 imp-file
+[gaurav@ip-172-31-8-77 shd-fol]$ cat imp-file
+Hi Welcome you are inside the file... !
+[gaurav@ip-172-31-8-77 shd-fol]$ cat >> imp-file
+i have access now !
+[gaurav@ip-172-31-8-77 shd-fol]$ cat imp-file
+Hi Welcome you are inside the file... !
+i have access now !
+[gaurav@ip-172-31-8-77 shd-fol]$ su tanu
+Password:
+[tanu@ip-172-31-8-77 shd-fol]$ cat imp-file
+cat: imp-file: Permission denied
+[tanu@ip-172-31-8-77 shd-fol]$ exit
+exit
+[gaurav@ip-172-31-8-77 shd-fol]$ exit
+exit
+[root@ip-172-31-8-77 shd-fol]# gpasswd -a gaurav vpn-acces
+gpasswd: group 'vpn-acces' does not exist in /etc/group
+[root@ip-172-31-8-77 shd-fol]# gpasswd -a gaurav vpn-access
+Adding user gaurav to group vpn-access
+[root@ip-172-31-8-77 shd-fol]# su tanu
+[tanu@ip-172-31-8-77 shd-fol]$ cat imp-file
+cat: imp-file: Permission denied
+[tanu@ip-172-31-8-77 shd-fol]$ exit
+exit
+[root@ip-172-31-8-77 shd-fol]# gpasswd -a tanu vpn-acces
+gpasswd: group 'vpn-acces' does not exist in /etc/group
+[root@ip-172-31-8-77 shd-fol]# gpasswd -a tanu vpn-access
+Adding user tanu to group vpn-access
+[root@ip-172-31-8-77 shd-fol]# su tanu
+[tanu@ip-172-31-8-77 shd-fol]$ cat imp-file
+Hi Welcome you are inside the file... !
+i have access now !
+[tanu@ip-172-31-8-77 shd-fol]$ cat >> imp-file
+line added by tanu
+[tanu@ip-172-31-8-77 shd-fol]$ cat imp-file
+Hi Welcome you are inside the file... !
+i have access now !
+line added by tanu
+[tanu@ip-172-31-8-77 shd-fol]$ exit
+exit
+[root@ip-172-31-8-77 shd-fol]# cd ..
+[root@ip-172-31-8-77 /]# ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  mydata  opt  proc  root  run  sbin  shd-fol  srv  sys  tmp  usr  var
+[root@ip-172-31-8-77 /]# ls -p
+bin  boot/  dev/  etc/  home/  lib  lib64  local/  media/  mnt/  mydata/  opt/  proc/  root/  run/  sbin  shd-fol/  srv/  sys/  tmp/  usr/  var/
+[root@ip-172-31-8-77 /]# ls -l
+total 32
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 bin -> usr/bin
+dr-xr-xr-x.   5 root root 16384 Aug 13 21:08 boot
+drwxr-xr-x.  15 root root  3040 Sep 19 02:36 dev
+drwxr-xr-x.  76 root root 16384 Sep 19 03:29 etc
+drwxr-xr-x.   5 root root    48 Sep 19 02:47 home
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 lib -> usr/lib
+lrwxrwxrwx.   1 root root     9 Jan 30  2023 lib64 -> usr/lib64
+drwxr-xr-x.   2 root root     6 Aug 13 21:06 local
+drwxr-xr-x.   2 root root     6 Jan 30  2023 media
+drwxr-xr-x.   2 root root     6 Jan 30  2023 mnt
+drwxr-xr-x.   2 root root    18 Sep 19 02:53 mydata
+drwxr-xr-x.   3 root root    17 Aug 13 21:08 opt
+dr-xr-xr-x. 162 root root     0 Sep 19 02:36 proc
+dr-xr-x---.   3 root root   103 Aug 13 21:08 root
+drwxr-xr-x.  27 root root   820 Sep 19 02:36 run
+lrwxrwxrwx.   1 root root     8 Jan 30  2023 sbin -> usr/sbin
+drwxr-xr-x.   2 root root    22 Sep 19 03:11 shd-fol
+drwxr-xr-x.   2 root root     6 Jan 30  2023 srv
+dr-xr-xr-x.  13 root root     0 Sep 19 02:36 sys
+drwxrwxrwt.  11 root root   220 Sep 19 03:29 tmp
+drwxr-xr-x.  12 root root   144 Aug 13 21:07 usr
+drwxr-xr-x.  19 root root   266 Sep 19 02:36 var
+[root@ip-172-31-8-77 /]# chmod o-rx shd-fol
+[root@ip-172-31-8-77 /]# ls -l
+total 32
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 bin -> usr/bin
+dr-xr-xr-x.   5 root root 16384 Aug 13 21:08 boot
+drwxr-xr-x.  15 root root  3040 Sep 19 02:36 dev
+drwxr-xr-x.  76 root root 16384 Sep 19 03:29 etc
+drwxr-xr-x.   5 root root    48 Sep 19 02:47 home
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 lib -> usr/lib
+lrwxrwxrwx.   1 root root     9 Jan 30  2023 lib64 -> usr/lib64
+drwxr-xr-x.   2 root root     6 Aug 13 21:06 local
+drwxr-xr-x.   2 root root     6 Jan 30  2023 media
+drwxr-xr-x.   2 root root     6 Jan 30  2023 mnt
+drwxr-xr-x.   2 root root    18 Sep 19 02:53 mydata
+drwxr-xr-x.   3 root root    17 Aug 13 21:08 opt
+dr-xr-xr-x. 163 root root     0 Sep 19 02:36 proc
+dr-xr-x---.   3 root root   103 Aug 13 21:08 root
+drwxr-xr-x.  27 root root   820 Sep 19 02:36 run
+lrwxrwxrwx.   1 root root     8 Jan 30  2023 sbin -> usr/sbin
+drwxr-x---.   2 root root    22 Sep 19 03:11 shd-fol
+drwxr-xr-x.   2 root root     6 Jan 30  2023 srv
+dr-xr-xr-x.  13 root root     0 Sep 19 02:36 sys
+drwxrwxrwt.  11 root root   220 Sep 19 03:30 tmp
+drwxr-xr-x.  12 root root   144 Aug 13 21:07 usr
+drwxr-xr-x.  19 root root   266 Sep 19 02:36 var
+[root@ip-172-31-8-77 /]# su gaurav
+[gaurav@ip-172-31-8-77 /]$ cd shd-fol
+bash: cd: shd-fol: Permission denied
+[gaurav@ip-172-31-8-77 /]$ ls exit
+ls: cannot access 'exit': No such file or directory
+[gaurav@ip-172-31-8-77 /]$ exit
+exit
+[root@ip-172-31-8-77 /]# ls -l
+total 32
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 bin -> usr/bin
+dr-xr-xr-x.   5 root root 16384 Aug 13 21:08 boot
+drwxr-xr-x.  15 root root  3040 Sep 19 02:36 dev
+drwxr-xr-x.  76 root root 16384 Sep 19 03:29 etc
+drwxr-xr-x.   5 root root    48 Sep 19 02:47 home
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 lib -> usr/lib
+lrwxrwxrwx.   1 root root     9 Jan 30  2023 lib64 -> usr/lib64
+drwxr-xr-x.   2 root root     6 Aug 13 21:06 local
+drwxr-xr-x.   2 root root     6 Jan 30  2023 media
+drwxr-xr-x.   2 root root     6 Jan 30  2023 mnt
+drwxr-xr-x.   2 root root    18 Sep 19 02:53 mydata
+drwxr-xr-x.   3 root root    17 Aug 13 21:08 opt
+dr-xr-xr-x. 163 root root     0 Sep 19 02:36 proc
+dr-xr-x---.   3 root root   103 Aug 13 21:08 root
+drwxr-xr-x.  27 root root   820 Sep 19 02:36 run
+lrwxrwxrwx.   1 root root     8 Jan 30  2023 sbin -> usr/sbin
+drwxr-x---.   2 root root    22 Sep 19 03:11 shd-fol
+drwxr-xr-x.   2 root root     6 Jan 30  2023 srv
+dr-xr-xr-x.  13 root root     0 Sep 19 02:36 sys
+drwxrwxrwt.  11 root root   220 Sep 19 03:30 tmp
+drwxr-xr-x.  12 root root   144 Aug 13 21:07 usr
+drwxr-xr-x.  19 root root   266 Sep 19 02:36 var
+[root@ip-172-31-8-77 /]# chmod o+rx shd-fol
+[root@ip-172-31-8-77 /]# su gaurav
+[gaurav@ip-172-31-8-77 /]$ cd shd-fol
+[gaurav@ip-172-31-8-77 shd-fol]$
